@@ -1,21 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
---
--- Host: 127.0.0.1
--- Generation Time: Dec 12, 2016 at 05:59 PM
--- Server version: 10.1.8-MariaDB
--- PHP Version: 5.6.14
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
 -- Database: `binaperta_db`
 --
@@ -147,6 +129,16 @@ CREATE TABLE `lptks` (
   `JUMLAH` int(11) DEFAULT NULL,
   `TAHUN` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `lptks`
+--
+
+INSERT INTO `lptks` (`IDLPTKS`, `IDPROVINSI`, `JUMLAH`, `TAHUN`) VALUES
+(5, 1, 2, '2015'),
+(6, 2, 2, '2015'),
+(7, 3, 2, '2015'),
+(8, 4, 5, '2015');
 
 -- --------------------------------------------------------
 
@@ -296,12 +288,9 @@ CREATE TABLE `rekapjabatanfungsionalpusat` (
 --
 
 INSERT INTO `rekapjabatanfungsionalpusat` (`IDREKAP`, `NAMAPUSAT`, `2D`, `3A`, `3B`, `3C`, `3D`, `4A`, `4B`, `4C`, `TOTAL`) VALUES
-(7, 'DIREKTORAT PENGENDALIAN PENGGUNAAN TENAGA ASING', 0, 0, 4, 4, 3, 0, 0, 0, 11),
-(8, 'DIREKTORAT PENEMPATAN TENAGA KERJA DALAM NEGERI', 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(9, 'DIREKTORAT PENEMPATAN DAN PERLINDUNGAN TENAGA KERJA LUAR NEGERI', 0, 0, 4, 3, 2, 0, 0, 0, 9),
-(10, 'DIREKTORAT PENGEMBANGAN PASAR KERJA', 0, 0, 1, 0, 0, 0, 0, 0, 1),
-(11, 'DIREKTORAT PENGEMBANGAN DAN PERLUASAN KESEMPATAN KERJA', 0, 0, 0, 1, 0, 0, 0, 0, 1),
-(12, 'BALAI BESAR PENGEMBANGAN PASAR KERJA DAN PERLUASAN KESEMPATAN KERJA LEMBANG', 0, 0, 0, 0, 0, 0, 0, 0, 0);
+(13, '2', 2015, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2015),
+(14, '2', 2015, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2015),
+(15, '5', 2015, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2015);
 
 -- --------------------------------------------------------
 
@@ -313,6 +302,20 @@ CREATE TABLE `tahun` (
   `IDTAHUN` int(11) NOT NULL,
   `TAHUN` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tahun`
+--
+
+INSERT INTO `tahun` (`IDTAHUN`, `TAHUN`) VALUES
+(2009, '2009'),
+(2010, '2010'),
+(2011, '2011'),
+(2012, '2012'),
+(2013, '2013'),
+(2014, '2014'),
+(2015, '2015'),
+(2016, '2016');
 
 -- --------------------------------------------------------
 
@@ -492,7 +495,7 @@ ALTER TABLE `items`
 -- AUTO_INCREMENT for table `lptks`
 --
 ALTER TABLE `lptks`
-  MODIFY `IDLPTKS` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IDLPTKS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `posts`
 --
@@ -507,12 +510,12 @@ ALTER TABLE `rekapjabatanfungsionaldaerah`
 -- AUTO_INCREMENT for table `rekapjabatanfungsionalpusat`
 --
 ALTER TABLE `rekapjabatanfungsionalpusat`
-  MODIFY `IDREKAP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `IDREKAP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `user_login`
 --
 ALTER TABLE `user_login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Constraints for dumped tables
 --
