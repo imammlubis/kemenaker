@@ -4,20 +4,20 @@
  * Created by IntelliJ IDEA.
  * User: imam lubis
  * Date: 21/12/2016
- * Time: 7:14
+ * Time: 7:55
  */
-class LokasiPemberdayaanTKKMuda extends CI_Controller
+class LokasiPemberdayaanTKKLansia extends CI_Controller
 {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('lokasipemberdayaantkkmudaModel');
+        $this->load->model('lokasipemberdayaantkklansiaModel');
         $this->load->library('pagination');
     }
     function index($offset=0)
     {
-        $config['total_rows'] = $this->lokasipemberdayaantkkmudaModel->total();
-        $config['base_url'] = base_url()."DirektoratPTKDN/LokasiPemberdayaanTKKMuda/Index";
+        $config['total_rows'] = $this->lokasipemberdayaantkklansiaModel->total();
+        $config['base_url'] = base_url()."DirektoratPTKDN/LokasiPemberdayaanTKKLansia/Index";
         $config['per_page'] = 10;
         $config['uri_segment'] = '4';
 
@@ -47,12 +47,12 @@ class LokasiPemberdayaanTKKMuda extends CI_Controller
         $config['num_tag_open'] = '<li class="page">';
         $config['num_tag_close'] = '</li>';
         $this->pagination->initialize($config);
-        $query = $this->lokasipemberdayaantkkmudaModel->get(10,$this->uri->segment(4));
-        $data['lokasipemberdayaantkkmudaModel'] = null;
+        $query = $this->lokasipemberdayaantkklansiaModel->get(10,$this->uri->segment(4));
+        $data['lokasipemberdayaantkklansiaModel'] = null;
         if($query){
-            $data['lokasipemberdayaantkkmudaModel'] =  $query;
+            $data['lokasipemberdayaantkklansiaModel'] =  $query;
         }
-        $data ['main_content'] = 'DirektoratPTKDN/LokasiPemberdayaanTenagaKKMudadanWanita';
+        $data ['main_content'] = 'DirektoratPTKDN/LokasiPemberdayaanTKKLansia';
         $this->load->view('layout/MainLayout', $data);
     }
 
@@ -63,7 +63,7 @@ class LokasiPemberdayaanTKKMuda extends CI_Controller
         //read file from path
         $objPHPExcel = PHPExcel_IOFactory::load($file);
         //$col = $objPHPExcel->setActiveSheetIndex(0)->getHighestColumn();
-        $this->db->empty_table('lokasipemberdayaantkkmuda');
+        $this->db->empty_table('lokasipemberdayaantkklansia');
         $rows = $objPHPExcel->setActiveSheetIndex(0)->getHighestRow();
         $highestColumnIndex = PHPExcel_Cell::columnIndexFromString($objPHPExcel->setActiveSheetIndex(0)->getHighestColumn());
         for ($i = 2; $i<=$objPHPExcel->setActiveSheetIndex(0)->getHighestRow(); $i++) {
@@ -76,9 +76,8 @@ class LokasiPemberdayaanTKKMuda extends CI_Controller
                 'QTY' => $qty,
                 'JUMLAH' => $jumlah
             );
-            $this->lokasipemberdayaantkkmudaModel->add($dataInput);
+            $this->lokasipemberdayaantkklansiaModel->add($dataInput);
         }
-        redirect('DirektoratPTKDN/LokasiPemberdayaanTKKMuda');
+        redirect('DirektoratPTKDN/LokasiPemberdayaanTKKLansia');
     }
-
 }

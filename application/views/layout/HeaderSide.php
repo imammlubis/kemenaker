@@ -196,7 +196,7 @@
                                             <a href="<?php echo base_url();?>DirektoratPTKDN/LokasiPemberdayaanTKKMuda" class="nav-link  "> Lokasi Pemberdayaan Tenaga Kerja Khusus Muda & Wanita </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="<?php echo base_url();?>DirektoratPTKDN/RekapFungsionalDaerah" class="nav-link  "> Lokasi Pemberdayaan Tenaga Kerja Lansia & Disabilitas </a>
+                                            <a href="<?php echo base_url();?>DirektoratPTKDN/LokasiPemberdayaanTKKLansia" class="nav-link  "> Lokasi Pemberdayaan Tenaga Kerja Lansia & Disabilitas </a>
                                         </li>
                                         <li class=" ">
                                             <a href="<?php echo base_url();?>DirektoratPTKDN/RekapFungsionalDaerah" class="nav-link  "> Pemberdayaan Tenaga Kerja Muda & Wanita </a>
