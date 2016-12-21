@@ -193,7 +193,7 @@
                                             <a href="<?php echo base_url();?>DirektoratPTKDN/RekapitulasiJobfairNasional" class="nav-link  "> JobFair Nasional </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="<?php echo base_url();?>DirektoratPTKDN/RekapFungsionalDaerah" class="nav-link  "> Lokasi Pemberdayaan Tenaga Kerja Khusus Muda & Wanita </a>
+                                            <a href="<?php echo base_url();?>DirektoratPTKDN/LokasiPemberdayaanTKKMuda" class="nav-link  "> Lokasi Pemberdayaan Tenaga Kerja Khusus Muda & Wanita </a>
                                         </li>
                                         <li class=" ">
                                             <a href="<?php echo base_url();?>DirektoratPTKDN/RekapFungsionalDaerah" class="nav-link  "> Lokasi Pemberdayaan Tenaga Kerja Lansia & Disabilitas </a>
