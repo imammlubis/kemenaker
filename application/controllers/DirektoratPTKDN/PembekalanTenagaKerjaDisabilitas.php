@@ -3,21 +3,22 @@
 /**
  * Created by IntelliJ IDEA.
  * User: imam lubis
- * Date: 21/12/2016
- * Time: 8:12
+ * Date: 24/12/2016
+ * Time: 2:02
  */
-class PemberdayaanTenagaMudaDanWanita extends CI_Controller
+class PembekalanTenagaKerjaDisabilitas extends CI_Controller
 {
+
     function __construct()
     {
         parent::__construct();
-        $this->load->model('pemberdayaantenagakerjamudaModel');
+        $this->load->model('pembekalantenagakerjadisabilitasModel');
         $this->load->library('pagination');
     }
     function index($offset=0)
     {
-        $config['total_rows'] = $this->pemberdayaantenagakerjamudaModel->total();
-        $config['base_url'] = base_url()."DirektoratPTKDN/PemberdayaanTenagaMudaDanWanita/Index";
+        $config['total_rows'] = $this->pembekalantenagakerjadisabilitasModel->total();
+        $config['base_url'] = base_url()."DirektoratPTKDN/PembekalanTenagaKerjaDisabilitas/Index";
         $config['per_page'] = 10;
         $config['uri_segment'] = '4';
 
@@ -47,12 +48,12 @@ class PemberdayaanTenagaMudaDanWanita extends CI_Controller
         $config['num_tag_open'] = '<li class="page">';
         $config['num_tag_close'] = '</li>';
         $this->pagination->initialize($config);
-        $query = $this->pemberdayaantenagakerjamudaModel->get(10,$this->uri->segment(4));
-        $data['pemberdayaantenagakerjamudaModel'] = null;
+        $query = $this->pembekalantenagakerjadisabilitasModel->get(10,$this->uri->segment(4));
+        $data['pembekalantenagakerjadisabilitasModel'] = null;
         if($query){
-            $data['pemberdayaantenagakerjamudaModel'] =  $query;
+            $data['pembekalantenagakerjadisabilitasModel'] =  $query;
         }
-        $data ['main_content'] = 'DirektoratPTKDN/PemberdayaanTenagaMudaDanWanita';
+        $data ['main_content'] = 'DirektoratPTKDN/PembekalanTenagaKerjaDisabilitas';
         $this->load->view('layout/MainLayout', $data);
     }
 
@@ -63,7 +64,7 @@ class PemberdayaanTenagaMudaDanWanita extends CI_Controller
         //read file from path
         $objPHPExcel = PHPExcel_IOFactory::load($file);
         //$col = $objPHPExcel->setActiveSheetIndex(0)->getHighestColumn();
-        $this->db->empty_table('pemberdayaantenagakerjamuda');
+        $this->db->empty_table('pembekalantenagakerjadisabilitas');
         $rows = $objPHPExcel->setActiveSheetIndex(0)->getHighestRow();
         $highestColumnIndex = PHPExcel_Cell::columnIndexFromString($objPHPExcel->setActiveSheetIndex(0)->getHighestColumn());
         for ($i = 2; $i<=$objPHPExcel->setActiveSheetIndex(0)->getHighestRow(); $i++) {
@@ -82,8 +83,9 @@ class PemberdayaanTenagaMudaDanWanita extends CI_Controller
                 'TGLAKHIR' => $tglAkhir,
                 'KETERANGAN' => $keterangan
             );
-            $this->pemberdayaantenagakerjamudaModel->add($dataInput);
+            $this->pembekalantenagakerjadisabilitasModel->add($dataInput);
         }
-        redirect('DirektoratPTKDN/PemberdayaanTenagaMudaDanWanita');
+        redirect('DirektoratPTKDN/PembekalanTenagaKerjaDisabilitas');
     }
+
 }

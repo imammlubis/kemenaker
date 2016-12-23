@@ -199,13 +199,13 @@
                                             <a href="<?php echo base_url();?>DirektoratPTKDN/LokasiPemberdayaanTKKLansia" class="nav-link  "> Lokasi Pemberdayaan Tenaga Kerja Lansia & Disabilitas </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="<?php echo base_url();?>DirektoratPTKDN/RekapFungsionalDaerah" class="nav-link  "> Pemberdayaan Tenaga Kerja Muda & Wanita </a>
+                                            <a href="<?php echo base_url();?>DirektoratPTKDN/PemberdayaanTenagaMudaDanWanita" class="nav-link  "> Pemberdayaan Tenaga Kerja Muda & Wanita </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="<?php echo base_url();?>DirektoratPTKDN/RekapFungsionalDaerah" class="nav-link  "> Pembekalan Tenaga Kerja Disabilitas </a>
+                                            <a href="<?php echo base_url();?>DirektoratPTKDN/PembekalanTenagaKerjaDisabilitas" class="nav-link  "> Pembekalan Tenaga Kerja Disabilitas </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="<?php echo base_url();?>DirektoratPTKDN/RekapFungsionalDaerah" class="nav-link  "> Pembekalan Tenaga Kerja Lansia </a>
+                                            <a href="<?php echo base_url();?>DirektoratPTKDN/PembekalanTKLansia" class="nav-link  "> Pembekalan Tenaga Kerja Lansia </a>
                                         </li>
                                         <li class=" ">
                                             <a href="<?php echo base_url();?>DirektoratPTKDN/RekapFungsionalDaerah" class="nav-link  "> Pemberdayaan Tenaga Kerja Muda dan Wanita </a>

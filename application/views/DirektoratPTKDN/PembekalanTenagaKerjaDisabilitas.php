@@ -29,7 +29,7 @@
                         <i class="fa fa-circle"></i>
                     </li>
                     <li>
-                        <span>Pemberdayaan Tenaga Kerja Muda & Wanita</span>
+                        <span>Pembekalan Tenaga Kerja Disabilitas</span>
                     </li>
                 </ul>
                 <!-- END PAGE BREADCRUMBS -->
@@ -39,9 +39,9 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                <h4 class="modal-title">Upload Form Data Pemberdayaan Tenaga Kerja Muda & Wanita</h4>
+                                <h4 class="modal-title">Upload Form Data Pembekalan Tenaga Kerja Disabilitas</h4>
                             </div>
-                            <form action="<?php echo base_url('DirektoratPTKDN/PemberdayaanTenagaMudaDanWanita/UploadExcel');?>" method="post"
+                            <form action="<?php echo base_url('DirektoratPTKDN/PembekalanTenagaKerjaDisabilitas/UploadExcel');?>" method="post"
                                   enctype="multipart/form-data"
                                   class="form-horizontal">
                                 <div class="modal-body">
@@ -79,7 +79,7 @@
                                     <div class="portlet-title">
                                         <div class="caption">
                                             <i class="fa fa-cogs font-green-sharp"></i>
-                                            <span class="caption-subject font-green-sharp bold uppercase">Pemberdayaan Tenaga Kerja Muda & Wanita</span>
+                                            <span class="caption-subject font-green-sharp bold uppercase">Pembekalan Tenaga Kerja Disabilitas</span>
                                         </div>
                                         <div class="tools">
                                             <a href="javascript:;" class="collapse" data-original-title="" title="">
@@ -115,8 +115,8 @@
 
                                                     </tr>
                                                     <?php
-                                                    if(is_array($pemberdayaantenagakerjamudaModel) && count($pemberdayaantenagakerjamudaModel) ) {
-                                                        foreach($pemberdayaantenagakerjamudaModel as $item){
+                                                    if(is_array($pembekalantenagakerjadisabilitasModel) && count($pembekalantenagakerjadisabilitasModel) ) {
+                                                        foreach($pembekalantenagakerjadisabilitasModel as $item){
                                                             ?>
                                                             <tr>
                                                                 <td><?=$item->NAMAKABUPATEN;?></td>
