@@ -164,7 +164,7 @@
                                             </ul>
                                         </li>
                                         <li class=" ">
-                                            <a href="<?php echo base_url();?>DirektoratPTKDN/RekapFungsionalDaerah"> Laporan Penempatan AKAD </a>
+                                            <a href="<?php echo base_url();?>DirektoratPTKDN/LaporanPenempatanAkad"> Laporan Penempatan AKAD </a>
                                         </li>
                                         <li class=" ">
                                             <a href="<?php echo base_url();?>DirektoratPTKDN/LPTKS"> Data LPTKS </a>
@@ -274,7 +274,7 @@
                                 </li>
 
                                 <li class="menu-dropdown classic-menu-dropdown ">
-                                    <a href="<?php echo base_url();?>DirektoratPPTKA/DaftarIzinKategoriSektor">
+                                    <a href="javascript:;">
                                         <i class="icon-briefcase"></i> Direktorat PPTKA
                                         <span class="arrow"></span>
                                     </a>
@@ -310,12 +310,12 @@
                                     </a>
                                     <ul class="dropdown-menu pull-left">
                                         <li class="">
-                                            <a href="javascript:;" class="nav-link nav-toggle ">
+                                            <a href="<?php echo base_url();?>DirektoratBBPPKnPKK/PembekalanMotivator" class="nav-link nav-toggle ">
                                                 <i class="icon-basket"></i> Realilasi Pembekalan Motivator
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="javascript:;" class="nav-link nav-toggle ">
+                                            <a href="<?php echo base_url();?>DirektoratBBPPKnPKK/PengembanganTenagaKerjaRentan" class="nav-link nav-toggle ">
                                                 <i class="icon-docs"></i> Persebaran Program Pengembangan Tenaga Kerja Rentan
                                             </a>
                                         </li>
