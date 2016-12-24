@@ -3,27 +3,29 @@
 /**
  * Created by IntelliJ IDEA.
  * User: imam lubis
- * Date: 15/12/2016
- * Time: 1:26
+ * Date: 24/12/2016
+ * Time: 11:03
  */
-class RekapitulasiPengadaan extends CI_Controller
+class JumlahPPTKIS extends CI_Controller
 {
+
     function __construct()
     {
         parent::__construct();
-        $this->load->model('RekapitulasiPengadaanModel');
+        $this->load->model('jumlahpptkisModel');
         $this->load->library('pagination');
     }
-
     function index($offset=0)
     {
-        $config['total_rows'] = $this->RekapitulasiPengadaanModel->total();
-        $config['base_url'] = base_url()."DirektoratPTKDN/RekapitulasiPengadaan/Index";
+        $config['total_rows'] = $this->jumlahpptkisModel->total();
+        $config['base_url'] = base_url()."DirektoratPTKLN/JumlahPPTKIS/Index";
         $config['per_page'] = 10;
         $config['uri_segment'] = '4';
+
         $config['full_tag_open'] = '<div class="dataTables_paginate paging_bootstrap_full_number" id="sample_1_paginate">
                                                         <ul class="pagination" style="visibility: visible;">';
         $config['full_tag_close'] = '</ul></div>';
+
         //$config['first_link'] = '« First';
         $config['first_tag_open'] = '<li class="prev">';
         $config['first_tag_close'] = '</li>';
@@ -46,12 +48,12 @@ class RekapitulasiPengadaan extends CI_Controller
         $config['num_tag_open'] = '<li class="page">';
         $config['num_tag_close'] = '</li>';
         $this->pagination->initialize($config);
-        $query = $this->RekapitulasiPengadaanModel->get(10,$this->uri->segment(4));
-        $data['RekapitulasiPengadaanModel'] = null;
+        $query = $this->jumlahpptkisModel->get(10,$this->uri->segment(4));
+        $data['jumlahpptkisModel'] = null;
         if($query){
-            $data['RekapitulasiPengadaanModel'] =  $query;
+            $data['jumlahpptkisModel'] =  $query;
         }
-        $data ['main_content'] = 'DirektoratPTKDN/RekapitulasiPengadaan';
+        $data ['main_content'] = 'DirektoratPTKLN/JumlahPPTKIS';
         $this->load->view('layout/MainLayout', $data);
     }
 
@@ -62,27 +64,23 @@ class RekapitulasiPengadaan extends CI_Controller
         //read file from path
         $objPHPExcel = PHPExcel_IOFactory::load($file);
         //$col = $objPHPExcel->setActiveSheetIndex(0)->getHighestColumn();
-        $this->db->empty_table('rekapitulasi_pengadaan_sarana_bursa_kerja_online');
+        $this->db->empty_table('jumlahpptkis');
         $rows = $objPHPExcel->setActiveSheetIndex(0)->getHighestRow();
         $highestColumnIndex = PHPExcel_Cell::columnIndexFromString($objPHPExcel->setActiveSheetIndex(0)->getHighestColumn());
+        for ($i = 3; $i<=$objPHPExcel->setActiveSheetIndex(0)->getHighestRow(); $i++) {
+            $tahun = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(0, $i);
+            $cabut = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(1, $i);
+            $aktif = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(2, $i);
+            $total = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(3, $i);
 
-        for ($i = 3; $i<=$objPHPExcel->setActiveSheetIndex(0)->getHighestRow(); $i++)
-        {
-            $provinsi = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(1, $i)->getValue();
-            for($y=2; $y<$highestColumnIndex; $y++)
-            {
-                $tahun = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow($y, 2)->getValue();
-                $jumlah = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow($y, $i)->getValue();
-
-                $dataInput = array(
-                    'IDPROVINSI' => $provinsi,
-                    'IDTAHUN' => $tahun,
-                    'JUMLAH' => $jumlah
-                );
-                $this->RekapitulasiPengadaanModel->add($dataInput);
-            }
+            $dataInput = array(
+                'IDTAHUN' => $tahun,
+                'CABUT' => $cabut,
+                'AKTIF' => $aktif,
+                'TOTAL' => $total
+            );
+            $this->jumlahpptkisModel->add($dataInput);
         }
-        redirect('DirektoratPTKDN/RekapitulasiPengadaan');
+        redirect('DirektoratPTKLN/JumlahPPTKIS');
     }
-
 }

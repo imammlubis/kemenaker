@@ -3,27 +3,28 @@
 /**
  * Created by IntelliJ IDEA.
  * User: imam lubis
- * Date: 15/12/2016
- * Time: 1:26
+ * Date: 24/12/2016
+ * Time: 13:55
  */
-class RekapitulasiPengadaan extends CI_Controller
+class LokasiDanaDroppingSektorJasaDanIndustriKreatif extends CI_Controller
 {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('RekapitulasiPengadaanModel');
+        $this->load->model('lokasidanadroppingsektorjasadanindustrikreatifModel');
         $this->load->library('pagination');
     }
-
     function index($offset=0)
     {
-        $config['total_rows'] = $this->RekapitulasiPengadaanModel->total();
-        $config['base_url'] = base_url()."DirektoratPTKDN/RekapitulasiPengadaan/Index";
+        $config['total_rows'] = $this->lokasidanadroppingsektorjasadanindustrikreatifModel->total();
+        $config['base_url'] = base_url()."DirektoratPPKK/LokasiDanaDroppingSektorJasaDanIndustriKreatif/Index";
         $config['per_page'] = 10;
         $config['uri_segment'] = '4';
+
         $config['full_tag_open'] = '<div class="dataTables_paginate paging_bootstrap_full_number" id="sample_1_paginate">
                                                         <ul class="pagination" style="visibility: visible;">';
         $config['full_tag_close'] = '</ul></div>';
+
         //$config['first_link'] = '« First';
         $config['first_tag_open'] = '<li class="prev">';
         $config['first_tag_close'] = '</li>';
@@ -46,12 +47,12 @@ class RekapitulasiPengadaan extends CI_Controller
         $config['num_tag_open'] = '<li class="page">';
         $config['num_tag_close'] = '</li>';
         $this->pagination->initialize($config);
-        $query = $this->RekapitulasiPengadaanModel->get(10,$this->uri->segment(4));
-        $data['RekapitulasiPengadaanModel'] = null;
+        $query = $this->lokasidanadroppingsektorjasadanindustrikreatifModel->get(10,$this->uri->segment(4));
+        $data['lokasidanadroppingsektorjasadanindustrikreatifModel'] = null;
         if($query){
-            $data['RekapitulasiPengadaanModel'] =  $query;
+            $data['lokasidanadroppingsektorjasadanindustrikreatifModel'] =  $query;
         }
-        $data ['main_content'] = 'DirektoratPTKDN/RekapitulasiPengadaan';
+        $data ['main_content'] = 'DirektoratPPKK/LokasiDanaDroppingSektorJasaDanIndustriKreatif';
         $this->load->view('layout/MainLayout', $data);
     }
 
@@ -62,27 +63,27 @@ class RekapitulasiPengadaan extends CI_Controller
         //read file from path
         $objPHPExcel = PHPExcel_IOFactory::load($file);
         //$col = $objPHPExcel->setActiveSheetIndex(0)->getHighestColumn();
-        $this->db->empty_table('rekapitulasi_pengadaan_sarana_bursa_kerja_online');
+        $this->db->empty_table('lokasidanadroppingsektorjasadanindustrikreatif');
         $rows = $objPHPExcel->setActiveSheetIndex(0)->getHighestRow();
         $highestColumnIndex = PHPExcel_Cell::columnIndexFromString($objPHPExcel->setActiveSheetIndex(0)->getHighestColumn());
 
-        for ($i = 3; $i<=$objPHPExcel->setActiveSheetIndex(0)->getHighestRow(); $i++)
-        {
-            $provinsi = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(1, $i)->getValue();
-            for($y=2; $y<$highestColumnIndex; $y++)
-            {
-                $tahun = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow($y, 2)->getValue();
-                $jumlah = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow($y, $i)->getValue();
+        for ($i = 2; $i<=$objPHPExcel->setActiveSheetIndex(0)->getHighestRow(); $i++) {
+            $kabupaten = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(0, $i);
+            $tahun = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(1, $i);
+            $jumlahPaket = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(2, $i);
+            $totalDanaPerPaket = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(3, $i);
+            $totalDana = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(4, $i);
 
-                $dataInput = array(
-                    'IDPROVINSI' => $provinsi,
-                    'IDTAHUN' => $tahun,
-                    'JUMLAH' => $jumlah
-                );
-                $this->RekapitulasiPengadaanModel->add($dataInput);
-            }
+            $dataInput = array(
+                'IDKABUPATEN' => $kabupaten,
+                'JUMLAHPAKET' => $jumlahPaket,
+                'TOTALDANAPERPAKET' => $totalDanaPerPaket,
+                'TOTALDANA' => $totalDana,
+                'TAHUN' => $tahun
+            );
+            $this->lokasidanadroppingsektorjasadanindustrikreatifModel->add($dataInput);
+
         }
-        redirect('DirektoratPTKDN/RekapitulasiPengadaan');
+        redirect('DirektoratPPKK/LokasiDanaDroppingSektorJasaDanIndustriKreatif');
     }
-
 }

@@ -207,21 +207,21 @@
                                         <li class=" ">
                                             <a href="<?php echo base_url();?>DirektoratPTKDN/PembekalanTKLansia" class="nav-link  "> Pembekalan Tenaga Kerja Lansia </a>
                                         </li>
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>DirektoratPTKDN/RekapFungsionalDaerah" class="nav-link  "> Pemberdayaan Tenaga Kerja Muda dan Wanita </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>DirektoratPTKDN/RekapFungsionalDaerah" class="nav-link  "> Pembekalan Tenaga Kerja Khusus (Disabilitas) </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>DirektoratPTKDN/RekapFungsionalDaerah" class="nav-link  "> Pembekalan Tenaga Kerja Khusus (Lansia) </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>DirektoratPTKDN/RekapFungsionalDaerah" class="nav-link  "> Pemberdayaan Tenaga Kerja Muda dan Wanita (Optimalisasi) </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>DirektoratPTKDN/RekapFungsionalDaerah" class="nav-link  "> Pemberdayaan Tenaga Kerja Disabilitas dan Lansia (Optimalisasi) </a>
-                                        </li>
+<!--                                        <li class=" ">-->
+<!--                                            <a href="--><?php //echo base_url();?><!--DirektoratPTKDN/RekapFungsionalDaerah" class="nav-link  "> Pemberdayaan Tenaga Kerja Muda dan Wanita </a>-->
+<!--                                        </li>-->
+<!--                                        <li class=" ">-->
+<!--                                            <a href="--><?php //echo base_url();?><!--DirektoratPTKDN/RekapFungsionalDaerah" class="nav-link  "> Pembekalan Tenaga Kerja Khusus (Disabilitas) </a>-->
+<!--                                        </li>-->
+<!--                                        <li class=" ">-->
+<!--                                            <a href="--><?php //echo base_url();?><!--DirektoratPTKDN/RekapFungsionalDaerah" class="nav-link  "> Pembekalan Tenaga Kerja Khusus (Lansia) </a>-->
+<!--                                        </li>-->
+<!--                                        <li class=" ">-->
+<!--                                            <a href="--><?php //echo base_url();?><!--DirektoratPTKDN/RekapFungsionalDaerah" class="nav-link  "> Pemberdayaan Tenaga Kerja Muda dan Wanita (Optimalisasi) </a>-->
+<!--                                        </li>-->
+<!--                                        <li class=" ">-->
+<!--                                            <a href="--><?php //echo base_url();?><!--DirektoratPTKDN/RekapFungsionalDaerah" class="nav-link  "> Pemberdayaan Tenaga Kerja Disabilitas dan Lansia (Optimalisasi) </a>-->
+<!--                                        </li>-->
                                     </ul>
                                 </li>
                                 <li class="menu-dropdown classic-menu-dropdown ">
@@ -231,41 +231,41 @@
                                     </a>
                                     <ul class="dropdown-menu pull-left">
                                         <li class="">
-                                            <a href="javascript:;" class="nav-link nav-toggle ">
+                                            <a href="<?php echo base_url();?>DirektoratPTKLN/JumlahPenempatanTKI" class="nav-link nav-toggle ">
                                                 Jumlah Penempatan Kerja TKI
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="javascript:;" class="nav-link nav-toggle ">
+                                            <a href="<?php echo base_url();?>DirektoratPTKLN/PenerimaanRemitansi" class="nav-link nav-toggle ">
                                                 Data Penerimaan Remitansi Tenaga Kerja Indonesia
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="javascript:;" class="nav-link nav-toggle ">
+                                            <a href="<?php echo base_url();?>DirektoratPTKLN/JumlahPPTKIS" class="nav-link nav-toggle ">
                                                 Rekapitulasi Jumlah PPTKIS
                                                 <span class="arrow"></span>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="javascript:;" class="nav-link nav-toggle ">
+                                            <a href="<?php echo base_url();?>DirektoratPTKLN/AnggaranAtase" class="nav-link nav-toggle ">
                                                 Anggaran Atase
                                                 <span class="arrow"></span>
                                             </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="javascript:;" class="nav-link nav-toggle ">
+                                            <a href="<?php echo base_url();?>DirektoratPPKK/PendayagunaanTKS" class="nav-link nav-toggle ">
                                                 Realisasi Pendayagunaan TKS
                                                 <span class="arrow"></span>
                                             </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="javascript:;" class="nav-link nav-toggle ">
+                                            <a href="<?php echo base_url();?>DirektoratPPKK/LokasiDanaDroppingSektorPertanianDanMaritim" class="nav-link nav-toggle ">
                                                 Rekapitulasi Lokasi Dana Dropping Kegiatan Pemberdayaan Masyarakat
                                                 <span class="arrow"></span>
                                             </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="javascript:;" class="nav-link nav-toggle ">
+                                            <a href="<?php echo base_url();?>DirektoratPPKK/LokasiDanaDroppingSektorJasaDanIndustriKreatif" class="nav-link nav-toggle ">
                                                 Rekapitulasi Lokasi Dana Dropping Kegiatan Pemberdayaan Masyarakat Sektor JAsa dan Industri Kreatif
                                                 <span class="arrow"></span>
                                             </a>
@@ -274,29 +274,29 @@
                                 </li>
 
                                 <li class="menu-dropdown classic-menu-dropdown ">
-                                    <a href="javascript:;">
+                                    <a href="<?php echo base_url();?>DirektoratPPTKA/DaftarIzinKategoriSektor">
                                         <i class="icon-briefcase"></i> Direktorat PPTKA
                                         <span class="arrow"></span>
                                     </a>
                                     <ul class="dropdown-menu pull-left">
                                         <li class="">
-                                            <a href="javascript:;" class="nav-link nav-toggle ">
+                                            <a href="<?php echo base_url();?>DirektoratPPTKA/DaftarIzinKategoriSektor" class="nav-link nav-toggle ">
                                                 Daftar Izin Mempekerjakan TKA yang diterbitkan berdasarkan kategori sektor
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="javascript:;" class="nav-link nav-toggle ">
+                                            <a href="<?php echo base_url();?>DirektoratPPTKA/JumlahRencanaPenggunaanTKA" class="nav-link nav-toggle ">
                                                 Jumlah Rencana Penggunaan Tenaga Kerja Asing (RPTKA)
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="javascript:;" class="nav-link nav-toggle ">
+                                            <a href="<?php echo base_url();?>DirektoratPPTKA/DaftarIzinKategoriNegara" class="nav-link nav-toggle ">
                                                 Daftar Izin Mempekerjakan TKA yang diterbitkan berdasarkan kategori Negara
                                                 <span class="arrow"></span>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="javascript:;" class="nav-link nav-toggle ">
+                                            <a href="<?php echo base_url();?>DirektoratPPTKA/DaftarIzinTKABerdasarkanJabatan" class="nav-link nav-toggle ">
                                                 Daftar Izin Mempekerjakan TKA yang diterbitkan Periode berdasarkan Jabatan
                                                 <span class="arrow"></span>
                                             </a>
