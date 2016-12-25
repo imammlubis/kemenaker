@@ -28,6 +28,24 @@ CREATE TABLE `detailpkbyprovinsi` (
   `JUMLAH` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `detailpkbyprovinsi`
+--
+
+INSERT INTO `detailpkbyprovinsi` (`IDDETAIL`, `IDPROVINSI`, `IDTAHUN`, `JUMLAH`) VALUES
+(2, 1, 2010, 1091091),
+(3, 1, 2011, 191919),
+(4, 1, 2012, 989898),
+(5, 1, 2013, 1010),
+(6, 1, 2014, 101011),
+(7, 1, 2015, 2015),
+(8, 2, 2010, 2010),
+(9, 2, 2011, 2011),
+(10, 2, 2012, 12391),
+(11, 2, 2013, 12098),
+(12, 2, 2014, 98),
+(13, 2, 2015, 98);
+
 -- --------------------------------------------------------
 
 --
@@ -308,6 +326,8 @@ CREATE TABLE `tahun` (
 --
 
 INSERT INTO `tahun` (`IDTAHUN`, `TAHUN`) VALUES
+(2007, '2007'),
+(2008, '2008'),
 (2009, '2009'),
 (2010, '2010'),
 (2011, '2011'),
@@ -486,6 +506,26 @@ ALTER TABLE `user_login`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `detailpkbyjeniskelamin`
+--
+ALTER TABLE `detailpkbyjeniskelamin`
+  MODIFY `IDDETAILJENISKELAMIN` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `detailpkbyprovinsi`
+--
+ALTER TABLE `detailpkbyprovinsi`
+  MODIFY `IDDETAIL` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `detailrekapjabatanbyprovinsi`
+--
+ALTER TABLE `detailrekapjabatanbyprovinsi`
+  MODIFY `IDDETAILREKAPJABATANBYPROVINSI` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `detailrekapjabatanpusat`
+--
+ALTER TABLE `detailrekapjabatanpusat`
+  MODIFY `IDDETAILREKAPJABATANPUSAT` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `items`
 --
