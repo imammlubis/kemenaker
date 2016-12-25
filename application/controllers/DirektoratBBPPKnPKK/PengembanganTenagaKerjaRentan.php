@@ -13,9 +13,13 @@ class PengembanganTenagaKerjaRentan extends CI_Controller
         parent::__construct();
         $this->load->model('pengembangantenagakerjarentanModel');
         $this->load->library('pagination');
+        $this->load->library('session');
+
     }
     function index($offset=0)
     {
+        if ($this->session->userdata('id'))
+        {
         $config['total_rows'] = $this->pengembangantenagakerjarentanModel->total();
         $config['base_url'] = base_url()."DirektoratBBPPKnPKK/PengembanganTenagaKerjaRentan/Index";
         $config['per_page'] = 10;
@@ -54,6 +58,10 @@ class PengembanganTenagaKerjaRentan extends CI_Controller
         }
         $data ['main_content'] = 'DirektoratBBPPKnPKK/PengembanganTenagaKerjaRentan';
         $this->load->view('layout/MainLayout', $data);
+        }
+        else{
+            redirect("account/login");
+        }
     }
 
     function UploadExcel(){

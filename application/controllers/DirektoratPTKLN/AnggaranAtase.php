@@ -14,10 +14,14 @@ class AnggaranAtase extends CI_Controller
         parent::__construct();
         $this->load->model('anggaranataseModel');
         $this->load->library('pagination');
+        $this->load->library('session');
     }
     function index($offset=0)
     {
-        $config['total_rows'] = $this->anggaranataseModel->total();
+        if ($this->session->userdata('id'))
+        {
+
+            $config['total_rows'] = $this->anggaranataseModel->total();
         $config['base_url'] = base_url()."DirektoratPTKLN/AnggaranAtase/Index";
         $config['per_page'] = 10;
         $config['uri_segment'] = '4';
@@ -55,6 +59,10 @@ class AnggaranAtase extends CI_Controller
         }
         $data ['main_content'] = 'DirektoratPTKLN/AnggaranAtase';
         $this->load->view('layout/MainLayout', $data);
+        }
+        else{
+            redirect("account/login");
+        }
     }
 
     function UploadExcel(){

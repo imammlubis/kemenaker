@@ -38,7 +38,6 @@ class Login extends CI_Controller {
             else
             {
                 redirect(base_url().'DirektoratPKK/PencariKerjaTerdaftar');
-
             }
         //}
         //$data ['main_content'] = 'Account/Login';
@@ -57,6 +56,7 @@ class Login extends CI_Controller {
             foreach($result as $row)
             {
                 $sess_array=array(
+                    'status_user' => 1,
                     'id' => $row->id,
                     'user_name' => $row->user_name,
                     'user_email' => $row->user_email,

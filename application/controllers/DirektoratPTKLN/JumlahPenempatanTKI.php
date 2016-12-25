@@ -13,10 +13,15 @@ class JumlahPenempatanTKI extends CI_Controller
         parent::__construct();
         $this->load->model('jumlahpenempatantkiModel');
         $this->load->library('pagination');
+        $this->load->library('session');
     }
     function index($offset=0)
     {
-        $config['total_rows'] = $this->jumlahpenempatantkiModel->total();
+        if ($this->session->userdata('id'))
+        {
+
+
+            $config['total_rows'] = $this->jumlahpenempatantkiModel->total();
         $config['base_url'] = base_url()."DirektoratPTKLN/JumlahPenempatanTKI/Index";
         $config['per_page'] = 10;
         $config['uri_segment'] = '4';
@@ -54,6 +59,10 @@ class JumlahPenempatanTKI extends CI_Controller
         }
         $data ['main_content'] = 'DirektoratPTKLN/JumlahPenempatanTKI';
         $this->load->view('layout/MainLayout', $data);
+        }
+        else{
+            redirect("account/login");
+        }
     }
 
     function UploadExcel(){

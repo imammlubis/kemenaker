@@ -13,11 +13,15 @@ class LaporanPenempatanAkad extends CI_Controller
         parent::__construct();
         $this->load->model('penempatanakadModel');
         $this->load->library('pagination');
+        $this->load->library('session');
     }
 
     function index($offset=0)
     {
-        $config['total_rows'] = $this->penempatanakadModel->total();
+        if ($this->session->userdata('id'))
+        {
+
+            $config['total_rows'] = $this->penempatanakadModel->total();
         $config['base_url'] = base_url()."DirektoratPTKDN/LaporanPenempatanAkad/Index";
         $config['per_page'] = 10;
         $config['uri_segment'] = '4';
@@ -55,6 +59,11 @@ class LaporanPenempatanAkad extends CI_Controller
         }
         $data ['main_content'] = 'DirektoratPTKDN/LaporanPenempatanAkad';
         $this->load->view('layout/MainLayout', $data);
+
+        }
+        else{
+            redirect("account/login");
+        }
     }
 
     function UploadExcel(){

@@ -13,10 +13,16 @@ class DaftarIzinKategoriNegara extends CI_Controller
         parent::__construct();
         $this->load->model('daftarizinmempekerjakantkakategorinegaraModel');
         $this->load->library('pagination');
+        $this->load->library('session');
+
     }
     function index($offset=0)
     {
-        $config['total_rows'] = $this->daftarizinmempekerjakantkakategorinegaraModel->total();
+        if ($this->session->userdata('id'))
+        {
+
+
+            $config['total_rows'] = $this->daftarizinmempekerjakantkakategorinegaraModel->total();
         $config['base_url'] = base_url()."DirektoratPPTKA/DaftarIzinKategoriNegara/Index";
         $config['per_page'] = 10;
         $config['uri_segment'] = '4';
@@ -53,7 +59,10 @@ class DaftarIzinKategoriNegara extends CI_Controller
             $data['daftarizinmempekerjakantkakategorinegaraModel'] =  $query;
         }
         $data ['main_content'] = 'DirektoratPPTKA/DaftarIzinKategoriNegara';
-        $this->load->view('layout/MainLayout', $data);
+        $this->load->view('layout/MainLayout', $data);}
+        else{
+            redirect("account/login");
+        }
     }
 
     function UploadExcel(){

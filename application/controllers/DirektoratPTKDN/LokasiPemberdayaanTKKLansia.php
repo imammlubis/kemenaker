@@ -13,10 +13,14 @@ class LokasiPemberdayaanTKKLansia extends CI_Controller
         parent::__construct();
         $this->load->model('lokasipemberdayaantkklansiaModel');
         $this->load->library('pagination');
+        $this->load->library('session');
     }
     function index($offset=0)
     {
-        $config['total_rows'] = $this->lokasipemberdayaantkklansiaModel->total();
+        if ($this->session->userdata('id'))
+        {
+
+            $config['total_rows'] = $this->lokasipemberdayaantkklansiaModel->total();
         $config['base_url'] = base_url()."DirektoratPTKDN/LokasiPemberdayaanTKKLansia/Index";
         $config['per_page'] = 10;
         $config['uri_segment'] = '4';
@@ -54,6 +58,11 @@ class LokasiPemberdayaanTKKLansia extends CI_Controller
         }
         $data ['main_content'] = 'DirektoratPTKDN/LokasiPemberdayaanTKKLansia';
         $this->load->view('layout/MainLayout', $data);
+
+        }
+        else{
+            redirect("account/login");
+        }
     }
 
     function UploadExcel(){

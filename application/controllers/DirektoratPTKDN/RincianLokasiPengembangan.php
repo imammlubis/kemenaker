@@ -13,11 +13,16 @@ class RincianLokasiPengembangan extends CI_Controller
         parent::__construct();
         $this->load->model('lokasipengembanganruangpelayananModel');
         $this->load->library('pagination');
+        $this->load->library('session');
+
     }
 
     function index($offset=0)
     {
-        $config['total_rows'] = $this->lokasipengembanganruangpelayananModel->totalLokasi();
+        if ($this->session->userdata('id'))
+        {
+
+            $config['total_rows'] = $this->lokasipengembanganruangpelayananModel->totalLokasi();
         $config['base_url'] = base_url()."DirektoratPTKDN/RincianLokasiPengembangan/Index";
         $config['per_page'] = 10;
         $config['uri_segment'] = '4';
@@ -53,6 +58,11 @@ class RincianLokasiPengembangan extends CI_Controller
         }
         $data ['main_content'] = 'DirektoratPTKDN/RincianLokasiPengembangan';
         $this->load->view('layout/MainLayout', $data);
+
+        }
+        else{
+            redirect("account/login");
+        }
     }
 
     function UploadExcel(){

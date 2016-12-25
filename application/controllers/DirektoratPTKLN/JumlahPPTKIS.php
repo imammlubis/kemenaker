@@ -14,10 +14,14 @@ class JumlahPPTKIS extends CI_Controller
         parent::__construct();
         $this->load->model('jumlahpptkisModel');
         $this->load->library('pagination');
+        $this->load->library('session');
     }
     function index($offset=0)
     {
-        $config['total_rows'] = $this->jumlahpptkisModel->total();
+        if ($this->session->userdata('id'))
+        {
+
+            $config['total_rows'] = $this->jumlahpptkisModel->total();
         $config['base_url'] = base_url()."DirektoratPTKLN/JumlahPPTKIS/Index";
         $config['per_page'] = 10;
         $config['uri_segment'] = '4';
@@ -54,7 +58,10 @@ class JumlahPPTKIS extends CI_Controller
             $data['jumlahpptkisModel'] =  $query;
         }
         $data ['main_content'] = 'DirektoratPTKLN/JumlahPPTKIS';
-        $this->load->view('layout/MainLayout', $data);
+        $this->load->view('layout/MainLayout', $data);}
+        else{
+            redirect("account/login");
+        }
     }
 
     function UploadExcel(){

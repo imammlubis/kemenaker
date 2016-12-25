@@ -13,10 +13,15 @@ class PendayagunaanTKS extends CI_Controller
         parent::__construct();
         $this->load->model('pendayagunaantksModel');
         $this->load->library('pagination');
+        $this->load->library('session');
+
     }
     function index($offset=0)
     {
-        $config['total_rows'] = $this->pendayagunaantksModel->total();
+        if ($this->session->userdata('id'))
+        {
+
+            $config['total_rows'] = $this->pendayagunaantksModel->total();
         $config['base_url'] = base_url()."DirektoratPPKK/PendayagunaanTKS/Index";
         $config['per_page'] = 10;
         $config['uri_segment'] = '4';
@@ -54,6 +59,10 @@ class PendayagunaanTKS extends CI_Controller
         }
         $data ['main_content'] = 'DirektoratPPKK/PendayagunaanTKS';
         $this->load->view('layout/MainLayout', $data);
+        }
+        else{
+            redirect("account/login");
+        }
     }
 
     function UploadExcel(){
