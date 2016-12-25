@@ -179,7 +179,7 @@
                                             </a>
                                             <ul class="dropdown-menu">
                                                 <li class=" ">
-                                                    <a href="<?php echo base_url();?>DirektoratPTKDN/RekapitulasiPengadaanPemerintah">
+                                                    <a href="<?php echo base_url();?>DirektoratPTKDN/PengadaanSaranaBursaKerjaOnline">
                                                         <i class="icon-graph"></i> Bursa Kerja Pemerintah </a>
                                                 </li>
                                                 <li class=" ">
