@@ -50,7 +50,7 @@ class LowonganKerjaTerdaftar extends CI_Controller {
         //$page = $this->uri->segment(3);
         //print_r($page);
         $query = $this->DetailLKByProvinsiModel->getDetailLKByProvinsi(10,$this->uri->segment(4));
-        //$query = $this->DetailPKByProvinsiModel->getDetailPKByProvinsi(5,$page);
+        //$query = $this->DetailLKByProvinsiModel->getDetailPKByProvinsi(5,$page);
         $data['DetailLKByProvinsiModel'] = null;
         if($query){
             $data['DetailLKByProvinsiModel'] =  $query;
@@ -90,10 +90,10 @@ class LowonganKerjaTerdaftar extends CI_Controller {
                     'IDTAHUN' => $dataVal3,
                     'JUMLAH' => $dataVal2
                 );
-                $this->DetailPKByProvinsiModel->AddDetailPKByProvinsi($dataInput);
+                $this->DetailLKByProvinsiModel->AddDetailLKByProvinsi($dataInput);
             }
         }
-        redirect('DirektoratPKK/PencariKerjaTerdaftar');
+        redirect('DirektoratPKK/LowonganKerjaTerdaftar');
     }
 }
 
