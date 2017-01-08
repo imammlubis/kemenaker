@@ -37,7 +37,8 @@ class Login extends CI_Controller {
             }
             else
             {
-                redirect(base_url().'DirektoratPKK/PencariKerjaTerdaftar');
+//                redirect(base_url().'DirektoratPKK/PencariKerjaTerdaftar');
+                redirect(base_url().'Welcome');
             }
         //}
         //$data ['main_content'] = 'Account/Login';

@@ -76,7 +76,7 @@
 </div>
 <!--[if lt IE 9]>
 <script src="assets/global/plugins/respond.min.js"></script>
-<script src="assets/global/plugins/excanvas.min.js"></script>
+<script src="<?php echo base_url();?>application/assets/global/plugins/excanvas.min.js" type="text/javascript"></script>
 <![endif]-->
 <!-- BEGIN CORE PLUGINS -->
 <script src="<?php echo base_url();?>application/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
@@ -94,9 +94,6 @@
 <script src="<?php echo base_url();?>application/assets/global/plugins/counterup/jquery.waypoints.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url();?>application/assets/global/plugins/counterup/jquery.counterup.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url();?>application/assets/global/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url();?>application/assets/global/plugins/flot/jquery.flot.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url();?>application/assets/global/plugins/flot/jquery.flot.resize.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url();?>application/assets/global/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url();?>application/assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url();?>application/assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url();?>application/assets/global/plugins/jqvmap/jqvmap/jquery.vmap.js" type="text/javascript"></script>
@@ -118,7 +115,34 @@
 <script src="<?php echo base_url();?>application/assets/layouts/layout3/scripts/demo.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url();?>application/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
+<!--<script src="--><?php //echo base_url();?><!--application/assets/global/plugins/flot/jquery.flot.min.js" type="text/javascript"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--application/assets/global/plugins/flot/jquery.flot.resize.min.js" type="text/javascript"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--application/assets/global/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>-->
+<!---->
 
+<script src="<?php echo base_url();?>application/assets/global/plugins/flot/jquery.flot.min.js"></script>
+<script src="<?php echo base_url();?>application/assets/global/plugins/flot/jquery.flot.resize.min.js"></script>
+<script src="<?php echo base_url();?>application/assets/global/plugins/flot/jquery.flot.pie.min.js"></script>
+<script src="<?php echo base_url();?>application/assets/global/plugins/flot/jquery.flot.stack.min.js"></script>
+<script src="<?php echo base_url();?>application/assets/global/plugins/flot/jquery.flot.crosshair.min.js"></script>
+<script src="<?php echo base_url();?>application/assets/global/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>application/assets/admin/pages/scripts/charts-flotcharts.js"></script>
+
+<script src="<?php echo base_url();?>application/assets/global/scripts/metronic.js" type="text/javascript"></script>
+
+<script>
+    jQuery(document).ready(function() {
+        // initiate layout and plugins
+        Metronic.init(); // init metronic core components
+        Layout.init(); // init current layout
+        QuickSidebar.init(); // init quick sidebar
+        Demo.init(); // init demo features
+        ChartsFlotcharts.init();
+        ChartsFlotcharts.initCharts();
+        ChartsFlotcharts.initPieCharts();
+        ChartsFlotcharts.initBarCharts();
+    });
+</script>
 </body>
 
 </html>
