@@ -3,9 +3,24 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed, Hacking activ
 
 class DetailPKByProvinsiModel extends  CI_Model
 {
+    private $tabel = 'detailpkbyprovinsi';
+
     function __construct()
     {
         parent::__construct();
+    }
+    function get_chart_data() {
+        $query = $this->db->get($this->tabel);
+        $results['chart_data'] = $query->result();
+        $this->db->select_min('performance_year');
+        $this->db->limit(1);
+        $query = $this->db->get($this->tabel);
+        $results['min_year'] = $query->row()->performance_year;
+        $this->db->select_max('performance_year');
+        $this->db->limit(1);
+        $query = $this->db->get($this->tabel);
+        $results['max_year'] = $query->row()->performance_year;
+        return $results;
     }
 
     public function record_count() {

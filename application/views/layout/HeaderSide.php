@@ -45,7 +45,7 @@
                     <div class="container">
                         <!-- BEGIN LOGO -->
                         <div class="page-logo">
-                            <a href="index.html">
+                            <a href="<?php echo base_url();?>">
                                 <img src="<?php echo base_url();?>application/assets/pages/img/binapenta-logo1.png" alt="logo" class="logo-default">
                             </a>
                         </div>

@@ -22,15 +22,14 @@ class Welcome extends CI_Controller {
     {
         parent::__construct();
         $this->load->library('session');
+        $this->load->model('chartmodel', 'chart');
+        $this->load->model('DetailPKByProvinsiModel', 'chart');
 
     }
 	public function index()
 	{
         if ($this->session->userdata('id'))
         {
-
-
-            //$this->load->view('welcome_message');
             $data ['main_content'] = 'dashboard';
             $this->load->view('layout/MainLayout', $data);
         }
