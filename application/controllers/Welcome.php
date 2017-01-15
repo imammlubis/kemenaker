@@ -22,14 +22,42 @@ class Welcome extends CI_Controller {
     {
         parent::__construct();
         $this->load->library('session');
-        $this->load->model('chartmodel', 'chart');
+        //$this->load->model('chartmodel', 'chart');
         $this->load->model('DetailPKByProvinsiModel', 'chart');
-
+        $this->load->model('DetailLKByProvinsiModel', 'chart2');
+        $this->load->model('pemenuhantkbyprovinsiModel', 'chart3');
+        $this->load->model('DetailLKByJenisKelaminModel', 'chart4');
+        $this->load->model('detailpkbyjeniskelaminModel', 'chart5');
     }
 	public function index()
 	{
         if ($this->session->userdata('id'))
         {
+            $results = $this->chart->get_chart_data();
+            $data['chart_data'] = $results['chart_data'];
+            $data['min_year'] = $results['min_year'];
+            $data['max_year'] = $results['max_year'];
+
+            $results2 = $this->chart2->get_chart_data();
+            $data['chart_data2'] = $results2['chart_data'];
+            $data['min_year2'] = $results2['min_year'];
+            $data['max_year2'] = $results2['max_year'];
+
+            $results3 = $this->chart3->get_chart_data();
+            $data['chart_data3'] = $results3['chart_data'];
+            $data['min_year3'] = $results3['min_year'];
+            $data['max_year3'] = $results3['max_year'];
+
+            $results4 = $this->chart4->get_chart_data();
+            $data['chart_data4'] = $results4['chart_data'];
+            $data['min_year4'] = $results4['min_year'];
+            $data['max_year4'] = $results4['max_year'];
+
+            $results5 = $this->chart5->get_chart_data();
+            $data['chart_data5'] = $results5['chart_data'];
+            $data['min_year5'] = $results5['min_year'];
+            $data['max_year5'] = $results5['max_year'];
+
             $data ['main_content'] = 'dashboard';
             $this->load->view('layout/MainLayout', $data);
         }

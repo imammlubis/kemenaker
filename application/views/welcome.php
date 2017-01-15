@@ -16,6 +16,7 @@
 	<script src="app/helper/myHelper.js"></script>
 	<!-- App Controller -->
 	<script src="app/controllers/ItemController.js"></script>
+
 </head>
 <body ng-app="main-App">    
 	<nav class="navbar navbar-default">

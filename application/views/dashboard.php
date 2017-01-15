@@ -1,4 +1,121 @@
 
+<script src="<?php echo base_url();?>application/assets/GoogleCharts.js" type="text/javascript"></script>
+<!--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
+<script type="text/javascript">
+    google.charts.load("visualization", "1.1", {packages: ["bar"]});
+    google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawChart2);
+    google.charts.setOnLoadCallback(drawChart3);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Provinsi', 'Jumlah'],
+            <?php
+            foreach ($chart_data as $data) {
+                echo '['. "'". $data->NAMA . "'". ',' . $data->JUMLAH . '],';
+            }
+            ?>
+        ]);
+        var options = {
+            chart: {
+                title: 'Pencari Kerja Terdaftar'
+            }
+        };
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+        chart.draw(data, options);
+    }
+
+    function drawChart2() {
+        var data2 = google.visualization.arrayToDataTable([
+            ['Provinsi', 'Jumlah'],
+            <?php
+            foreach ($chart_data2 as $data2) {
+                echo '['. "'". $data2->NAMA . "'". ',' . $data2->JUMLAH . '],';
+            }
+            ?>
+        ]);
+        var options2 = {
+            chart: {
+                title: 'Lowongan Kerja Terdaftar'
+            }
+        };
+        var chart2 = new google.charts.Bar(document.getElementById('columnchart_material2'));
+        chart2.draw(data2, options2);
+    }
+
+    function drawChart3() {
+        var data3 = google.visualization.arrayToDataTable([
+            ['Provinsi', 'Jumlah'],
+            <?php
+            foreach ($chart_data3 as $data3) {
+                echo '['. "'". $data3->NAMA . "'". ',' . $data3->JUMLAH . '],';
+            }
+            ?>
+        ]);
+        var options3 = {
+            chart: {
+                title: 'Lowongan Kerja Terdaftar'
+            }
+        };
+        var chart3 = new google.charts.Bar(document.getElementById('columnchart_material3'));
+        chart3.draw(data3, options3);
+
+        google.charts.load('current', {packages: ['corechart', 'bar']});
+        google.charts.setOnLoadCallback(drawStacked);
+        function drawStacked() {
+            var data4 = google.visualization.arrayToDataTable([
+                ['Tahun', 'Pria', 'Wanita'],
+                <?php
+                foreach ($chart_data4 as $data4) {
+                    echo '['. "'". 'Tahun: '. $data4->IDTAHUN . "'". ',' . $data4->PRIA . ',' . $data4->WANITA . '],';
+                }
+                ?>
+            ]);
+
+            var options4 = {
+                title: 'Total Lowongan Kerja Terdaftar',
+                chartArea: {width: '50%'},
+                isStacked: true,
+                hAxis: {
+                    title: 'Total Lowongan Kerja',
+                    minValue: 0,
+                },
+                vAxis: {
+                    title: 'Jenis Kelamin'
+                }
+            };
+            var chart4 = new google.visualization.BarChart(document.getElementById('chart_div'));
+            chart4.draw(data4, options4);
+        }
+        google.charts.setOnLoadCallback(drawStacked2);
+        function drawStacked2() {
+            var data5 = google.visualization.arrayToDataTable([
+                ['Tahun', 'Pria', 'Wanita'],
+                <?php
+                foreach ($chart_data5 as $data5) {
+                    echo '['. "'". 'Tahun: '. $data5->IDTAHUN . "'". ',' . $data5->PRIA . ',' . $data5->WANITA . '],';
+                }
+                ?>
+            ]);
+
+            var options5 = {
+                title: 'Total Pencari Kerja Terdaftar',
+                chartArea: {width: '50%'},
+                isStacked: true,
+                hAxis: {
+                    title: 'Total Pencari Kerja',
+                    minValue: 0,
+                },
+                vAxis: {
+                    title: 'Jenis Kelamin'
+                }
+            };
+            var chart5 = new google.visualization.BarChart(document.getElementById('chart_div2'));
+            chart5.draw(data5, options5);
+        }
+    }
+</script>
+
+
 <div class="page-container">
     <!-- BEGIN CONTENT -->
     <div class="page-content-wrapper">
@@ -28,25 +145,70 @@
                                     <div class="portlet-title">
                                         <div class="caption">
                                             <i class="fa fa-cogs font-green-sharp"></i>
-                                            <span class="caption-subject font-green-sharp bold uppercase">KETENAGAKERJAAN UMUM - Data Survey Angkatan Kerja Nasional</span>
-                                        </div>
-                                        <div class="tools">
-                                            <a href="javascript:;" class="collapse" data-original-title="" title="">
-                                            </a>
-                                            <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title="">
-                                            </a>
-                                            <a href="javascript:;" class="reload" data-original-title="" title="">
-                                            </a>
-                                            <a href="javascript:;" class="remove" data-original-title="" title="">
-                                            </a>
+                                            <span class="caption-subject font-green-sharp bold uppercase">PENCARI KERJA TERDAFTAR</span>
                                         </div>
                                     </div>
                                     <div class="portlet-body">
-                                        <div id="chart_1_1_legendPlaceholder">
+                                        <div id="columnchart_material" style="width: 900px; height: 500px;"></div>
+<!--                                        <div id="chart_div"></div>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <!--CHART KEDUA-->
+                            <div class="col-md-12">
+                                <div class="portlet light">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class="fa fa-cogs font-green-sharp"></i>
+                                            <span class="caption-subject font-green-sharp bold uppercase">LOWONGAN KERJA TERDAFTAR</span>
                                         </div>
-                                        <div id="chart_1_1" class="chart" style="padding: 0px; position: relative;">
-                                            <canvas class="flot-base" width="1100" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1100px; height: 300px;"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 91px; top: 283px; left: 76px; text-align: center;">2</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 91px; top: 283px; left: 184px; text-align: center;">4</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 91px; top: 283px; left: 292px; text-align: center;">6</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 91px; top: 283px; left: 399px; text-align: center;">8</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 91px; top: 283px; left: 504px; text-align: center;">10</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 91px; top: 283px; left: 612px; text-align: center;">12</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 91px; top: 283px; left: 719px; text-align: center;">14</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 91px; top: 283px; left: 827px; text-align: center;">16</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 91px; top: 283px; left: 935px; text-align: center;">18</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 91px; top: 283px; left: 1042px; text-align: center;">20</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 270px; left: 14px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 216px; left: 8px; text-align: right;">50</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 162px; left: 1px; text-align: right;">100</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 108px; left: 1px; text-align: right;">150</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 54px; left: 1px; text-align: right;">200</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 1px; text-align: right;">250</div></div>
-                                            </div><canvas class="flot-overlay" width="1100" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1100px; height: 300px;"></canvas></div>
+                                    </div>
+                                    <div class="portlet-body">
+                                        <div id="columnchart_material2" style="width: 900px; height: 500px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--CHART KETIGA-->
+                            <div class="col-md-12">
+                                <div class="portlet light">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class="fa fa-cogs font-green-sharp"></i>
+                                            <span class="caption-subject font-green-sharp bold uppercase">PENEMPATAN KERJA TERDAFTAR</span>
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body">
+                                        <div id="columnchart_material3" style="width: 900px; height: 500px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--CHART KEEMPAT-->
+                            <div class="col-md-12">
+                                <div class="portlet light">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class="fa fa-cogs font-green-sharp"></i>
+                                            <span class="caption-subject font-green-sharp bold uppercase">TOTAL LOWONGAN KERJA TERDAFTAR</span>
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body">
+                                                                                <div id="chart_div"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--CHART KELIMA-->
+                            <div class="col-md-12">
+                                <div class="portlet light">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class="fa fa-cogs font-green-sharp"></i>
+                                            <span class="caption-subject font-green-sharp bold uppercase">TOTAL PENCARI KERJA TERDAFTAR</span>
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body">
+                                        <div id="chart_div2"></div>
                                     </div>
                                 </div>
                             </div>

@@ -10,10 +10,10 @@
         google.setOnLoadCallback(drawChart);
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
-                ['Year', 'Sales', 'Expenses', 'Profit'],
+                ['Year', 'Sales', 'Expenses'],
                 <?php
                 foreach ($chart_data as $data) {
-                    echo '[' . $data->performance_year . ',' . $data->performance_sales . ',' . $data->performance_expense . ',' . $data->performance_profit . '],';
+                    echo '[' . $data->performance_year . ',' . $data->performance_sales . ',' . $data->performance_expense . '],';
                 }
                 ?>
             ]);

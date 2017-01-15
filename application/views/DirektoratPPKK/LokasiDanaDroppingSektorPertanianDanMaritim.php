@@ -7,7 +7,7 @@
             <div class="container">
                 <!-- BEGIN PAGE TITLE -->
                 <div class="page-title">
-                    <h1>DIREKTORAT PPKK
+                    <h1>DIREKTORAT PTKLN
                         <!--small>dashboard &amp; statistics</small-->
                     </h1>
                 </div>
@@ -25,7 +25,7 @@
                         <i class="fa fa-circle"></i>
                     </li>
                     <li>
-                        <span>Direktorat PPKK</span>
+                        <span>Direktorat PTKLN</span>
                         <i class="fa fa-circle"></i>
                     </li>
                     <li>
