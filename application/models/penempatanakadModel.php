@@ -13,23 +13,23 @@ class penempatanakadModel extends CI_Model
         parent::__construct();
     }
 
-    function get_chart_data() {
+    function get_chart_data($opt) {
         $this->db->select("*");
         $this->db->from('penempatanakad');
-        $this->db->where('TAHUN', '2012');
+        $this->db->where('TAHUN', $opt);
         $query = $this->db->get();
         $results['chart_data'] = $query->result();
 
         $this->db->select_min("BULAN");
         $this->db->from('penempatanakad');
-        $this->db->where('TAHUN', '2012');
+        $this->db->where('TAHUN', $opt);
         $this->db->limit(1);
         $query = $this->db->get();
         $results['min_year'] = $query->row()->BULAN;
 
         $this->db->select_max("BULAN");
         $this->db->from('penempatanakad');
-        $this->db->where('TAHUN', '2012');
+        $this->db->where('TAHUN', $opt);
         $this->db->limit(1);
         $query = $this->db->get();
         $results['max_year'] = $query->row()->BULAN;

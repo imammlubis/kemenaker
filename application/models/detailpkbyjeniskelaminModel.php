@@ -7,23 +7,23 @@ class detailpkbyjeniskelaminModel extends  CI_Model
     {
         parent::__construct();
     }
-    function get_chart_data() {
+    function get_chart_data($opt) {
         $this->db->select("IDDETAILJENISKELAMIN,IDTAHUN,PRIA, WANITA");
         $this->db->from('detailpkbyjeniskelamin');
-        $this->db->where('IDTAHUN', '2015');
+        $this->db->where('IDTAHUN', $opt);
         $query = $this->db->get();
         $results['chart_data'] = $query->result();
 
         $this->db->select_min("IDTAHUN");
         $this->db->from('detailpkbyjeniskelamin');
-        $this->db->where('IDTAHUN', '2015');
+        $this->db->where('IDTAHUN', $opt);
         $this->db->limit(1);
         $query = $this->db->get();
         $results['min_year'] = $query->row()->IDTAHUN;
 
         $this->db->select_max("IDTAHUN");
         $this->db->from('detailpkbyjeniskelamin');
-        $this->db->where('IDTAHUN', '2015');
+        $this->db->where('IDTAHUN', $opt);
         $this->db->limit(1);
         $query = $this->db->get();
         $results['max_year'] = $query->row()->IDTAHUN;

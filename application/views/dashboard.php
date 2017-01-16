@@ -199,7 +199,6 @@
                 <div class="page-content-inner">
                     <div class="mt-content-body">
                         <div class="row">
-
                             <form action="<?php echo base_url('Welcome/FilterYear');?>" method="get"
                                   class="form-horizontal">
                                 <div class="col-md-6">
