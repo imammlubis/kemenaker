@@ -28,7 +28,11 @@ class Welcome extends CI_Controller {
         $this->load->model('pemenuhantkbyprovinsiModel', 'chart3');
         $this->load->model('DetailLKByJenisKelaminModel', 'chart4');
         $this->load->model('detailpkbyjeniskelaminModel', 'chart5');
+        $this->load->model('rekapjabatanfungsionalpusatModel', 'chart6');
+        $this->load->model('penempatanakadModel', 'chart7');
+
     }
+
 	public function index()
 	{
         if ($this->session->userdata('id'))
@@ -57,6 +61,17 @@ class Welcome extends CI_Controller {
             $data['chart_data5'] = $results5['chart_data'];
             $data['min_year5'] = $results5['min_year'];
             $data['max_year5'] = $results5['max_year'];
+
+            $results6 = $this->chart6->get_chart_data();
+            $data['chart_data6'] = $results6['chart_data'];
+            $data['min_year6'] = $results6['min_year'];
+            $data['max_year6'] = $results6['max_year'];
+
+            $results7 = $this->chart7->get_chart_data();
+            $data['chart_data7'] = $results7['chart_data'];
+            $data['min_year7'] = $results7['min_year'];
+            $data['max_year7'] = $results7['max_year'];
+            $data['total7'] = $this->chart7->sum();
 
             $data ['main_content'] = 'dashboard';
             $this->load->view('layout/MainLayout', $data);

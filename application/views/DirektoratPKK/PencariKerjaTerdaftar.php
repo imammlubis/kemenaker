@@ -1,3 +1,26 @@
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+    $( document ).ready(function() {
+//        $(".table").tablesorter({
+//            headers: {
+//                5: { sorter: 'digit' } // column number, type
+//            }
+//        });
+
+
+    });
+
+    function priceFormatter(value) {
+        // 16777215 == ffffff in decimal
+        var color = '#'+Math.floor(Math.random() * 6777215).toString(16);
+        return '<div  style="color: ' + color + '">' +
+            '<i class="glyphicon glyphicon-usd"></i>' +
+            value.substring(1) +
+            '</div>';
+    }
+
+</script>
 <div class="page-container">
     <!-- BEGIN CONTENT -->
     <div class="page-content-wrapper">
@@ -100,16 +123,12 @@
                                                         </button>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
                                         <div id="sample_1_wrapper" class="dataTables_wrapper no-footer">
-
                                             <div class="table-scrollable">
-
                                                 <table class="table table-striped table-bordered table-condensed">
                                                     <tr>
-                                                        <!--td><strong>Id Detail</strong></td-->
                                                         <td><strong>Provinsi</strong></td>
                                                         <td><strong>Tahun</strong></td>
                                                         <td><strong>Jumlah</strong></td>
@@ -119,10 +138,9 @@
                                                         foreach($DetailPKByProvinsiModel as $item){
                                                             ?>
                                                             <tr>
-                                                                <!--td><?=$item->IDDETAIL;?></td-->
                                                                 <td><?=$item->NAMAPROVINSI;?></td>
                                                                 <td><?=$item->IDTAHUN;?></td>
-                                                                <td><?=$item->JUMLAH;?></td>
+                                                                <td data-field="price" data-formatter="priceFormatter"><?=$item->JUMLAH;?></td>
                                                             </tr>
                                                             <?php
                                                         }

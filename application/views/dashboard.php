@@ -6,6 +6,7 @@
     google.charts.setOnLoadCallback(drawChart);
     google.charts.setOnLoadCallback(drawChart2);
     google.charts.setOnLoadCallback(drawChart3);
+    google.charts.setOnLoadCallback(drawChart7);
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Provinsi', 'Jumlah'],
@@ -17,11 +18,33 @@
         ]);
         var options = {
             chart: {
-                title: 'Pencari Kerja Terdaftar'
+                title: 'Pencari Kerja Terdaftar',
+                chartArea: {width: '50%'},
+                isStacked: true,
             }
         };
         var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
         chart.draw(data, options);
+    }
+    //PENEMPATAN AKAD CHART (7)
+    function drawChart7() {
+        var data7 = google.visualization.arrayToDataTable([
+            ['Bulan', 'Pria', 'Wanita'],
+            <?php
+            foreach ($chart_data7 as $data7) {
+                echo '['. "'". $data7->BULAN . "'". ',' . $data7->JUMLAHLAKI . ',' . $data7->JUMLAHPEREMPUAN . '],';
+            }
+            ?>
+        ]);
+        var options7 = {
+            chart: {
+                title: 'Penempatan Akad Total: <?php echo $total7; ?>',
+                chartArea: {width: '50%'},
+                isStacked: true,
+            }
+        };
+        var chart7 = new google.charts.Bar(document.getElementById('columnchart_material7'));
+        chart7.draw(data7, options7);
     }
 
     function drawChart2() {
@@ -35,7 +58,9 @@
         ]);
         var options2 = {
             chart: {
-                title: 'Lowongan Kerja Terdaftar'
+                title: 'Lowongan Kerja Terdaftar',
+                chartArea: {width: '50%'},
+                isStacked: true,
             }
         };
         var chart2 = new google.charts.Bar(document.getElementById('columnchart_material2'));
@@ -112,9 +137,36 @@
             var chart5 = new google.visualization.BarChart(document.getElementById('chart_div2'));
             chart5.draw(data5, options5);
         }
+        //DONUT CHART
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart6);
+        function drawChart6() {
+            var data6 = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                <?php
+                foreach ($chart_data6 as $data6) {
+                    echo '['. "'". 'II/D' . "'". ',' . $data6->DUAD . '],';
+                    echo '['. "'". 'III/A' . "'". ',' . $data6->TIGAA . '],';
+                    echo '['. "'". 'III/B' . "'". ',' . $data6->TIGAB . '],';
+                    echo '['. "'". 'III/C' . "'". ',' . $data6->TIGAC . '],';
+                    echo '['. "'". 'III/D' . "'". ',' . $data6->TIGAD . '],';
+                    echo '['. "'". 'IV/A' . "'". ',' . $data6->EMPATA . '],';
+                    echo '['. "'". 'IV/B' . "'". ',' . $data6->EMPATB . '],';
+                    echo '['. "'". 'IV/C' . "'". ',' . $data6->EMPATC . '],';
+                }
+                ?>
+            ]);
+
+            var options6 = {
+                title: 'Rekap Jabatan Fungsional Pengantar Kerja Total : <?php echo $data6->DUAD +$data6->TIGAA+$data6->TIGAB+$data6->TIGAC+$data6->TIGAD+$data6->EMPATA+$data6->EMPATB+$data6->EMPATC; ?>' ,
+                pieHole: 0.4,
+            };
+
+            var chart6 = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart6.draw(data6, options6);
+        }
     }
 </script>
-
 
 <div class="page-container">
     <!-- BEGIN CONTENT -->
@@ -150,7 +202,6 @@
                                     </div>
                                     <div class="portlet-body">
                                         <div id="columnchart_material" style="width: 900px; height: 500px;"></div>
-<!--                                        <div id="chart_div"></div>-->
                                     </div>
                                 </div>
                             </div>
@@ -209,6 +260,35 @@
                                     </div>
                                     <div class="portlet-body">
                                         <div id="chart_div2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--CHART KEENAM-->
+                            <div class="col-md-12">
+                                <div class="portlet light">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class="fa fa-cogs font-green-sharp"></i>
+                                            <span class="caption-subject font-green-sharp bold uppercase">DIREKTORAT PTKDN - REKAP JABATAN FUNGSIONAL PENGANTAR KERJA</span>
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body">
+                                        <div id="donutchart" style="width: 900px; height: 500px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--CHART KETUJUH-->
+                            <div class="col-md-12">
+                                <div class="portlet light">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class="fa fa-cogs font-green-sharp"></i>
+                                            <span class="caption-subject font-green-sharp bold uppercase">PENEMPATAN AKAD</span>
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body">
+                                        <div id="columnchart_material7" style="width: 900px; height: 500px;">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
