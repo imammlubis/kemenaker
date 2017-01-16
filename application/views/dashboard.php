@@ -1,7 +1,14 @@
 
 <script src="<?php echo base_url();?>application/assets/GoogleCharts.js" type="text/javascript"></script>
 <!--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript">
+//    $(document).ready(function(){ /* PREPARE THE SCRIPT */
+//        $("#opt").change(function(){ /* WHEN YOU CHANGE AND SELECT FROM THE SELECT FIELD */
+//            alert('test')
+//        });
+//    });
+
     google.charts.load("visualization", "1.1", {packages: ["bar"]});
     google.charts.setOnLoadCallback(drawChart);
     google.charts.setOnLoadCallback(drawChart2);
@@ -192,6 +199,36 @@
                 <div class="page-content-inner">
                     <div class="mt-content-body">
                         <div class="row">
+
+                            <form action="<?php echo base_url('Welcome/FilterYear');?>" method="get"
+                                  class="form-horizontal">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-md-3">Pilih Tahun</label>
+                                        <div class="col-md-3">
+                                            <select name="opt" id="opt" class="form-control">
+                                                <option>2010</option>
+                                                <option>2011</option>
+                                                <option>2012</option>
+                                                <option>2013</option>
+                                                <option>2014</option>
+                                                <option>2015</option>
+                                                <option>2016</option>
+                                                <option selected="selected">2017</option>
+                                                <option>2018</option>
+                                                <option>2019</option>
+                                                <option>2020</option>
+                                                <option>2021</option>
+                                                <option>2022</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <button type="submit" class="btn green">Pilih</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
                             <div class="col-md-12">
                                 <div class="portlet light">
                                     <div class="portlet-title">

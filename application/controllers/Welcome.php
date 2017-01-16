@@ -2,7 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
-
 	/**
 	 * Index Page for this controller.
 	 *
@@ -22,7 +21,6 @@ class Welcome extends CI_Controller {
     {
         parent::__construct();
         $this->load->library('session');
-        //$this->load->model('chartmodel', 'chart');
         $this->load->model('DetailPKByProvinsiModel', 'chart');
         $this->load->model('DetailLKByProvinsiModel', 'chart2');
         $this->load->model('pemenuhantkbyprovinsiModel', 'chart3');
@@ -30,7 +28,6 @@ class Welcome extends CI_Controller {
         $this->load->model('detailpkbyjeniskelaminModel', 'chart5');
         $this->load->model('rekapjabatanfungsionalpusatModel', 'chart6');
         $this->load->model('penempatanakadModel', 'chart7');
-
     }
 
 	public function index()
@@ -80,4 +77,17 @@ class Welcome extends CI_Controller {
             redirect("account/login");
         }
 	}
+
+	function FilterYear($year=2017)
+    {
+        if ($this->session->userdata('id')) {
+            $search_term = $this->input->post();
+            if($search_term) {
+                echo $search_term['opt'];
+            }
+        }
+        else{
+            redirect("account/login");
+        }
+    }
 }
