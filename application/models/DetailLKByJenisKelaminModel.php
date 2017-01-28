@@ -44,6 +44,23 @@ class DetailLKByJenisKelaminModel extends  CI_Model
     public function totalDetailPKByJenisKelamin() {
         return $this->db->count_all_results("lokerbyjeniskelamin");
     }
+    function getDetailPKByJKSearch($limit=null,$offset=NULL, $key){
+        $this->db->select("IDLOKERJK,IDTAHUN,PRIA, WANITA");
+        $this->db->from('lokerbyjeniskelamin');
+        $this->db->like('IDTAHUN', $key);
+        $this->db->limit($limit, $offset);
+
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function totalDetailPKByJenisKelaminSearch($key) {
+        $this->db->select("IDLOKERJK,IDTAHUN,PRIA, WANITA");
+        $this->db->from('lokerbyjeniskelamin');
+        $this->db->like('IDTAHUN', $key);
+        $query = $this->db->count_all_results();
+        return $query;
+    }
+
     function Add($data)
     {
         $this->db->insert('lokerbyjeniskelamin', $data);

@@ -59,11 +59,12 @@ class LowonganKerjaTerdaftarByJK extends CI_Controller {
         }
     }
 
-    function Search($offset=0)
+    function Search()
     {
+        $key = $this->input->get('key', TRUE);
         if ($this->session->userdata('id'))
         {
-            $config['total_rows'] = $this->DetailLKByJenisKelaminModel->totalDetailPKByJenisKelamin();
+            $config['total_rows'] = $this->DetailLKByJenisKelaminModel->totalDetailPKByJenisKelaminSearch($key);
             $config['base_url'] = base_url()."DirektoratPKK/LowonganKerjaTerdaftarByJK/Index";
             $config['per_page'] = 10;
             $config['uri_segment'] = '4';
@@ -94,7 +95,7 @@ class LowonganKerjaTerdaftarByJK extends CI_Controller {
             $config['num_tag_open'] = '<li class="page">';
             $config['num_tag_close'] = '</li>';
             $this->pagination->initialize($config);
-            $query = $this->DetailLKByJenisKelaminModel->getDetailPKByJK(10,$this->uri->segment(4));
+            $query = $this->DetailLKByJenisKelaminModel->getDetailPKByJKSearch(10,$this->uri->segment(4), $key);
             //$query = $this->DetailLKByJenisKelaminModel->getDetailPKByProvinsi(5,$page);
             $data['DetailLKByJenisKelaminModel'] = null;
             if($query){
