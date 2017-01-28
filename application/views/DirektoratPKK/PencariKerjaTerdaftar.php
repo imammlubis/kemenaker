@@ -123,15 +123,27 @@
                                                         </button>
                                                     </div>
                                                 </div>
+                                                <div class="col-md-6" align="right">
+                                                    <form action="<?php echo base_url('DirektoratPKK/PencariKerjaTerdaftar/Search');?>" method="get">
+                                                        <div class="input-group input-medium">
+                                                            <input type="text" id="key" name="key"
+                                                                   class="form-control" placeholder="Search By Provinsi">
+                                                            <span class="input-group-btn">
+                                                        <button class="btn blue" type="submit">Search</button>
+                                                        </span>
+                                                        </div>
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
+
                                         <div id="sample_1_wrapper" class="dataTables_wrapper no-footer">
                                             <div class="table-scrollable">
                                                 <table class="table table-striped table-bordered table-condensed">
                                                     <tr>
-                                                        <td><strong>Provinsi</strong></td>
-                                                        <td><strong>Tahun</strong></td>
-                                                        <td><strong>Jumlah</strong></td>
+                                                        <td align="center"><strong>Provinsi</strong></td>
+                                                        <td align="center"><strong>Tahun</strong></td>
+                                                        <td align="center"><strong>Jumlah</strong></td>
                                                     </tr>
                                                     <?php
                                                     if(is_array($DetailPKByProvinsiModel) && count($DetailPKByProvinsiModel) ) {

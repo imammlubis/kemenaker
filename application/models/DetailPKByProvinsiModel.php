@@ -50,8 +50,29 @@ class DetailPKByProvinsiModel extends  CI_Model
     }
 
     public function totalDetailPKByProvinsi() {
+
         return $this->db->count_all_results("detailpkbyprovinsi");
     }
+
+    function getDetailPKByProvinsiSearch($limit=null,$offset=NULL, $key){
+        $this->db->select("a.IDDETAIL,b.NAMAPROVINSI,a.IDTAHUN,a.JUMLAH");
+        $this->db->from('detailpkbyprovinsi a');
+        $this->db->limit($limit, $offset);
+        $this->db->like('b.NAMAPROVINSI', $key);
+        $this->db->join("provinsi b", "a.idprovinsi = b.idprovinsi", "left");
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function totalDetailPKByProvinsiSearch($key) {
+        //return $this->db->count_all_results("detailpkbyprovinsi");
+        $this->db->select("a.IDDETAIL,b.NAMAPROVINSI,a.IDTAHUN,a.JUMLAH");
+        $this->db->from('detailpkbyprovinsi a');
+        $this->db->like('b.NAMAPROVINSI', $key);
+        $this->db->join("provinsi b", "a.idprovinsi = b.idprovinsi", "left");
+        $query = $this->db->count_all_results();
+        return $query;
+    }
+
 
     function AddDetailPKByProvinsi($data)
     {

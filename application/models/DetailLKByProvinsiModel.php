@@ -48,6 +48,24 @@ class DetailLKByProvinsiModel extends  CI_Model
     public function totalDetailLKByProvinsi() {
         return $this->db->count_all_results("lokerbyprovinsi");
     }
+
+    function getDetailLKByProvinsiSearch($limit=null,$offset=NULL, $key){
+        $this->db->select("a.IDLOKER,b.NAMAPROVINSI,a.IDTAHUN,a.JUMLAH");
+        $this->db->from('lokerbyprovinsi a');
+        $this->db->limit($limit, $offset);
+        $this->db->like('b.NAMAPROVINSI', $key);
+        $this->db->join("provinsi b", "a.idprovinsi = b.idprovinsi", "left");
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function totalDetailLKByProvinsiSearch($key) {
+        $this->db->select("a.IDLOKER,b.NAMAPROVINSI,a.IDTAHUN,a.JUMLAH");
+        $this->db->from('lokerbyprovinsi a');
+        $this->db->like('b.NAMAPROVINSI', $key);
+        $this->db->join("provinsi b", "a.idprovinsi = b.idprovinsi", "left");
+        $query = $this->db->count_all_results();
+        return $query;
+    }
     function AddDetailLKByProvinsi($data)
     {
         $this->db->insert('lokerbyprovinsi', $data);
