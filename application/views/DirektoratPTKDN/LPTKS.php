@@ -96,7 +96,17 @@
                                                         </button>
                                                     </div>
                                                 </div>
-
+                                                <div class="col-md-6" align="right">
+                                                    <form action="<?php echo base_url('DirektoratPTKDN/LPTKS/Search');?>" method="get">
+                                                        <div class="input-group input-medium">
+                                                            <input type="text" id="key" name="key"
+                                                                   class="form-control" placeholder="Search By Provinsi">
+                                                            <span class="input-group-btn">
+                                                        <button class="btn blue" type="submit">Search</button>
+                                                        </span>
+                                                        </div>
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
                                         <div id="sample_1_wrapper" class="dataTables_wrapper no-footer">

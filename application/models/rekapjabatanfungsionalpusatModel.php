@@ -8,7 +8,6 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed, Hacking activ
  */
 class rekapjabatanfungsionalpusatModel extends  CI_Model
 {
-
     function __construct()
     {
         parent::__construct();
@@ -47,6 +46,23 @@ class rekapjabatanfungsionalpusatModel extends  CI_Model
 
     public function totalRekapFungsionalPusat() {
         return $this->db->count_all_results("rekapjabatanfungsionalpusat");
+    }
+
+    function getRekapFungsionalPusatSearch($limit=null,$offset=NULL, $key){
+        $this->db->select("NAMAPUSAT, 2D AS DUAD, 3A AS TIGAA, 3B AS TIGAB, 3C AS TIGAC, 3D AS TIGAD, 4A AS EMPATA, 4B AS EMPATB, 4C AS EMPATC, TOTAL");
+        $this->db->from('rekapjabatanfungsionalpusat');
+        $this->db->like('NAMAPUSAT', $key);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRekapFungsionalPusatSearch($key) {
+        $this->db->select("NAMAPUSAT, 2D AS DUAD, 3A AS TIGAA, 3B AS TIGAB, 3C AS TIGAC, 3D AS TIGAD, 4A AS EMPATA, 4B AS EMPATB, 4C AS EMPATC, TOTAL");
+        $this->db->from('rekapjabatanfungsionalpusat');
+        $this->db->like('NAMAPUSAT', $key);
+        $query = $this->db->count_all_results();
+        return $query;
     }
 
     function AddRekapFungsionalPusat($data)

@@ -105,7 +105,7 @@
                                                     <form action="<?php echo base_url('DirektoratPKK/PenempatanKerjaByJK/Search');?>" method="get">
                                                         <div class="input-group input-medium">
                                                             <input type="text" id="key" name="key"
-                                                                   class="form-control" placeholder="Search By Provinsi">
+                                                                   class="form-control" placeholder="Search By Year">
                                                             <span class="input-group-btn">
                                                         <button class="btn blue" type="submit">Search</button>
                                                         </span>

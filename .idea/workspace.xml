@@ -23,8 +23,8 @@
             <file leaf-file-name="PencariKerjaTerdaftar.php" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/application/controllers/DirektoratPKK/PencariKerjaTerdaftar.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="84">
-                    <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="63" selection-end-column="46" />
+                  <state relative-caret-position="101">
+                    <caret line="63" column="36" selection-start-line="62" selection-start-column="22" selection-end-line="63" selection-end-column="46" />
                     <folding>
                       <marker date="1485608120157" expanded="true" signature="873:982" ph="..." />
                       <marker date="1485608120157" expanded="true" signature="961:981" ph="..." />
@@ -35,11 +35,11 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="PencariKerjaTerdaftar.php" pinned="false" current-in-tab="false">
+            <file leaf-file-name="PencariKerjaTerdaftar.php" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/application/views/DirektoratPKK/PencariKerjaTerdaftar.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="506">
-                    <caret line="135" column="54" selection-start-line="125" selection-start-column="48" selection-end-line="135" selection-end-column="54" />
+                  <state relative-caret-position="404">
+                    <caret line="129" column="87" selection-start-line="125" selection-start-column="48" selection-end-line="135" selection-end-column="54" />
                     <folding>
                       <marker date="1485607984277" expanded="true" signature="462:469" ph="..." />
                     </folding>
@@ -47,7 +47,7 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="DetailPKByProvinsiModel.php" pinned="false" current-in-tab="true">
+            <file leaf-file-name="DetailPKByProvinsiModel.php" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/application/models/DetailPKByProvinsiModel.php">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="339">
@@ -68,15 +68,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RekapFungsionalPusat.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/DirektoratPTKDN/RekapFungsionalPusat.php">
+      <file leaf-file-name="LPTKS.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/DirektoratPTKDN/LPTKS.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+            <state relative-caret-position="323">
+              <caret line="102" column="86" selection-start-line="102" selection-start-column="86" selection-end-line="102" selection-end-column="86" />
               <folding>
-                <marker date="1482648322339" expanded="true" signature="916:1025" ph="..." />
-                <marker date="1482648322339" expanded="false" signature="1004:1024" ph="..." />
+                <element signature="n#index#0;n#LPTKS#0;n#!!top" expanded="false" />
+                <marker date="1485624125026" expanded="true" signature="826:935" ph="..." />
+                <marker date="1485624125026" expanded="false" signature="914:934" ph="..." />
+                <marker date="1485624125026" expanded="true" signature="2710:2819" ph="..." />
+                <marker date="1485624125026" expanded="true" signature="2798:2818" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LPTKS.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/DirektoratPTKDN/LPTKS.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="99" column="108" selection-start-line="99" selection-start-column="108" selection-end-line="99" selection-end-column="108" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lptksModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/lptksModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,14 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/controllers/DirektoratPTKDN/PembekalanTenagaKerjaDisabilitas.php" />
-        <option value="$PROJECT_DIR$/application/controllers/DirektoratPTKDN/PembekalanTKLansia.php" />
-        <option value="$PROJECT_DIR$/application/controllers/DirektoratPTKDN/PemberdayaanTenagaMudaDanWanita.php" />
-        <option value="$PROJECT_DIR$/application/controllers/DirektoratPTKDN/PengadaanSaranaBursaKerjaOnline.php" />
-        <option value="$PROJECT_DIR$/application/controllers/DirektoratPTKDN/RekapFungsionalDaerah.php" />
-        <option value="$PROJECT_DIR$/application/controllers/DirektoratPTKDN/RekapFungsionalPusat.php" />
-        <option value="$PROJECT_DIR$/application/controllers/DirektoratPTKDN/RekapitulasiJobfairNasional.php" />
-        <option value="$PROJECT_DIR$/application/controllers/DirektoratPTKDN/RekapitulasiPengadaan.php" />
         <option value="$PROJECT_DIR$/application/controllers/DirektoratPTKDN/RincianLokasiPengembangan.php" />
         <option value="$PROJECT_DIR$/application/controllers/DirektoratPTKLN/AnggaranAtase.php" />
         <option value="$PROJECT_DIR$/application/controllers/DirektoratPTKLN/JumlahPenempatanTKI.php" />
@@ -137,7 +152,6 @@
         <option value="$PROJECT_DIR$/application/views/DirektoratPPKK/PendayagunaanTKS.php" />
         <option value="$PROJECT_DIR$/application/views/DirektoratPPTKA/DaftarIzinKategoriNegara.php" />
         <option value="$PROJECT_DIR$/application/views/DirektoratPPTKA/DaftarIzinKategoriSektor.php" />
-        <option value="$PROJECT_DIR$/application/models/rekapjabatanfungsionalpusatModel.php" />
         <option value="$PROJECT_DIR$/application/models/penempatanakadModel.php" />
         <option value="$PROJECT_DIR$/application/views/FilterYear.php" />
         <option value="$PROJECT_DIR$/application/views/dashboard.php" />
@@ -159,8 +173,17 @@
         <option value="$PROJECT_DIR$/application/views/DirektoratPKK/PemenuhanTkByProvinsi.php" />
         <option value="$PROJECT_DIR$/application/models/pemenuhantkbyprovinsiModel.php" />
         <option value="$PROJECT_DIR$/application/controllers/DirektoratPKK/PenempatanKerjaByJK.php" />
-        <option value="$PROJECT_DIR$/application/views/DirektoratPKK/PemenuhanTkByJK.php" />
         <option value="$PROJECT_DIR$/application/models/pemenuhantkbyjkModel.php" />
+        <option value="$PROJECT_DIR$/application/models/rekapjabatanfungsionalpusatModel.php" />
+        <option value="$PROJECT_DIR$/application/controllers/DirektoratPTKDN/RekapFungsionalPusat.php" />
+        <option value="$PROJECT_DIR$/application/views/DirektoratPTKDN/RekapFungsionalPusat.php" />
+        <option value="$PROJECT_DIR$/application/views/DirektoratPKK/PemenuhanTkByJK.php" />
+        <option value="$PROJECT_DIR$/application/views/DirektoratPTKDN/RekapFungsionalDaerah.php" />
+        <option value="$PROJECT_DIR$/application/controllers/DirektoratPTKDN/RekapFungsionalDaerah.php" />
+        <option value="$PROJECT_DIR$/application/models/rekapjabatanfungsionaldaerahModel.php" />
+        <option value="$PROJECT_DIR$/application/controllers/DirektoratPTKDN/LPTKS.php" />
+        <option value="$PROJECT_DIR$/application/models/lptksModel.php" />
+        <option value="$PROJECT_DIR$/application/views/DirektoratPTKDN/LPTKS.php" />
       </list>
     </option>
   </component>
@@ -276,7 +299,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DirektoratPKK" />
+              <option name="myItemId" value="DirektoratPTKDN" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -826,12 +849,12 @@
       <workItem from="1484566828273" duration="10874000" />
       <workItem from="1485057210703" duration="1309000" />
       <workItem from="1485065767336" duration="3408000" />
-      <workItem from="1485600524416" duration="9658000" />
+      <workItem from="1485600524416" duration="10304000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218692000" />
+    <option name="totallyTimeSpent" value="219338000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -886,56 +909,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/controllers/DirektoratPTKLN/JumlahPPTKIS.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" column="9" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/DirektoratPTKLN/PenerimaanRemitansi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="129" column="39" selection-start-line="129" selection-start-column="36" selection-end-line="129" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Account/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/DirektoratPTKDN/RincianLokasiPengembangan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="139" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="149" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layout/MainLayout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1068,14 +1041,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="47" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/rekapjabatanfungsionalpusatModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1238,45 +1203,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/DirektoratPKK/PencariKerjaTerdaftar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="63" selection-end-column="46" />
-          <folding>
-            <marker date="1485608120157" expanded="true" signature="873:982" ph="..." />
-            <marker date="1485608120157" expanded="true" signature="961:981" ph="..." />
-            <marker date="1485608120157" expanded="true" signature="3114:3223" ph="..." />
-            <marker date="1485608120157" expanded="true" signature="3202:3222" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/DirektoratPKK/PemenuhanTkByJK.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="104" column="120" selection-start-line="104" selection-start-column="120" selection-end-line="104" selection-end-column="120" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/DirektoratPKK/PencariKerjaTerdaftar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="135" column="54" selection-start-line="125" selection-start-column="48" selection-end-line="135" selection-end-column="54" />
-          <folding>
-            <marker date="1485607984277" expanded="true" signature="462:469" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/DetailPKByProvinsiModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="71" column="7" selection-start-line="71" selection-start-column="7" selection-end-line="72" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/pemenuhantkbyjkModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -1285,9 +1211,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/rekapjabatanfungsionalpusatModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="62" column="43" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/DirektoratPKK/PemenuhanTkByJK.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="107" column="115" selection-start-line="107" selection-start-column="115" selection-end-line="107" selection-end-column="115" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/DirektoratPKK/PenempatanKerjaByJK.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="985">
+        <state relative-caret-position="178">
           <caret line="107" column="71" selection-start-line="107" selection-start-column="71" selection-end-line="107" selection-end-column="71" />
           <folding>
             <element signature="n#index#0;n#PenempatanKerjaByJK#0;n#!!top" expanded="false" />
@@ -1301,12 +1243,114 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/DirektoratPTKDN/RekapFungsionalPusat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        <state relative-caret-position="198">
+          <caret line="75" column="12" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
           <folding>
-            <marker date="1482648322339" expanded="true" signature="916:1025" ph="..." />
-            <marker date="1482648322339" expanded="false" signature="1004:1024" ph="..." />
+            <element signature="n#index#0;n#RekapFungsionalPusat#0;n#!!top" expanded="false" />
+            <marker date="1485623698740" expanded="true" signature="916:1025" ph="..." />
+            <marker date="1485623698740" expanded="false" signature="1004:1024" ph="..." />
+            <marker date="1485623698740" expanded="true" signature="3109:3218" ph="..." />
+            <marker date="1485623698740" expanded="true" signature="3197:3217" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/DirektoratPTKDN/RekapFungsionalDaerah.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="103" column="131" selection-start-line="103" selection-start-column="131" selection-end-line="103" selection-end-column="131" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/DirektoratPTKDN/RekapFungsionalPusat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="105" column="41" selection-start-line="105" selection-start-column="41" selection-end-line="105" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/DirektoratPTKDN/RekapFungsionalDaerah.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="103" column="125" selection-start-line="103" selection-start-column="125" selection-end-line="103" selection-end-column="125" />
+          <folding>
+            <marker date="1485623926303" expanded="false" signature="469:2571" ph="{...}" />
+            <marker date="1485623926303" expanded="true" signature="920:1029" ph="..." />
+            <marker date="1485623926303" expanded="false" signature="1008:1028" ph="..." />
+            <marker date="1485623926303" expanded="true" signature="3119:3228" ph="..." />
+            <marker date="1485623926303" expanded="true" signature="3207:3227" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/rekapjabatanfungsionaldaerahModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="30" column="69" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/DirektoratPKK/PencariKerjaTerdaftar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="63" column="36" selection-start-line="62" selection-start-column="22" selection-end-line="63" selection-end-column="46" />
+          <folding>
+            <marker date="1485608120157" expanded="true" signature="873:982" ph="..." />
+            <marker date="1485608120157" expanded="true" signature="961:981" ph="..." />
+            <marker date="1485608120157" expanded="true" signature="3114:3223" ph="..." />
+            <marker date="1485608120157" expanded="true" signature="3202:3222" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/DetailPKByProvinsiModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="71" column="7" selection-start-line="71" selection-start-column="7" selection-end-line="72" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/lptksModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/DirektoratPTKDN/LPTKS.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="102" column="86" selection-start-line="102" selection-start-column="86" selection-end-line="102" selection-end-column="86" />
+          <folding>
+            <element signature="n#index#0;n#LPTKS#0;n#!!top" expanded="false" />
+            <marker date="1485624125026" expanded="true" signature="826:935" ph="..." />
+            <marker date="1485624125026" expanded="false" signature="914:934" ph="..." />
+            <marker date="1485624125026" expanded="true" signature="2710:2819" ph="..." />
+            <marker date="1485624125026" expanded="true" signature="2798:2818" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/DirektoratPKK/PencariKerjaTerdaftar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="129" column="87" selection-start-line="125" selection-start-column="48" selection-end-line="135" selection-end-column="54" />
+          <folding>
+            <marker date="1485607984277" expanded="true" signature="462:469" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/DirektoratPTKDN/LPTKS.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="99" column="108" selection-start-line="99" selection-start-column="108" selection-end-line="99" selection-end-column="108" />
+          <folding />
         </state>
       </provider>
     </entry>
