@@ -2,13 +2,17 @@
 <script src="<?php echo base_url();?>application/assets/GoogleCharts.js" type="text/javascript"></script>
 <!--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
+<script>
+    $(document).ready(function() {
+        $('#opt').val(2013);
+    })
+</script>
 <script type="text/javascript">
-//    $(document).ready(function(){ /* PREPARE THE SCRIPT */
-//        $("#opt").change(function(){ /* WHEN YOU CHANGE AND SELECT FROM THE SELECT FIELD */
-//            alert('test')
-//        });
-//    });
+    //    $(document).ready(function(){ /* PREPARE THE SCRIPT */
+    //        $("#opt").change(function(){ /* WHEN YOU CHANGE AND SELECT FROM THE SELECT FIELD */
+    //            alert('test')
+    //        });
+    //    });
 
     google.charts.load("visualization", "1.1", {packages: ["bar"]});
     google.charts.setOnLoadCallback(drawChart);
@@ -175,7 +179,6 @@
         }
     }
 </script>
-
 <div class="page-container">
     <!-- BEGIN CONTENT -->
     <div class="page-content-wrapper">
@@ -185,9 +188,9 @@
             <div class="container">
                 <!-- BEGIN PAGE TITLE -->
                 <div class="page-title">
-<!--                    <h1>DASHBOARD-->
-                        <!--small>dashboard &amp; statistics</small-->
-<!--                    </h1>-->
+                    <!--                    <h1>DASHBOARD-->
+                    <!--small>dashboard &amp; statistics</small-->
+                    <!--                    </h1>-->
                 </div>
                 <!-- END PAGE TITLE -->
             </div>
@@ -214,7 +217,7 @@
                                                 <option>2014</option>
                                                 <option>2015</option>
                                                 <option>2016</option>
-                                                <option selected="selected">2017</option>
+                                                <option>2017</option>
                                                 <option>2018</option>
                                                 <option>2019</option>
                                                 <option>2020</option>
@@ -282,7 +285,7 @@
                                         </div>
                                     </div>
                                     <div class="portlet-body">
-                                                                                <div id="chart_div"></div>
+                                        <div id="chart_div"></div>
                                     </div>
                                 </div>
                             </div>
@@ -341,9 +344,5 @@
     </div>
     <!-- END CONTENT -->
 </div>
-<script>
-    $(document).ready(function() {
-            debugger;
-            $('#opt').val('<?php echo $opt;?>');
-    })
-</script>
+
+
