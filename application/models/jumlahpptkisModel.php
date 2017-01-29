@@ -25,6 +25,21 @@ class jumlahpptkisModel extends CI_Model
     public function total() {
         return $this->db->count_all_results("jumlahpptkis");
     }
+    function getSearch($limit=null,$offset=NULL, $key){
+        $this->db->select("*");
+        $this->db->from('jumlahpptkis a');
+        $this->db->like('IDTAHUN', $key);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function totalSearch($key) {
+        $this->db->select("*");
+        $this->db->from('jumlahpptkis a');
+        $this->db->like('IDTAHUN', $key);
+        $query = $this->db->count_all_results();
+        return $query;
+    }
 
     function add($data)
     {

@@ -26,6 +26,23 @@ class anggaranataseModel extends CI_Model
         return $this->db->count_all_results("anggaranatase");
     }
 
+    function getSearch($limit=null,$offset=NULL, $key){
+        $this->db->select("*");
+        $this->db->from('anggaranatase a');
+        $this->db->like('IDTAHUN', $key);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function totalSearch($key) {
+        $this->db->select("*");
+        $this->db->from('anggaranatase a');
+        $this->db->like('IDTAHUN', $key);
+        $query = $this->db->count_all_results();
+        return $query;
+    }
+
+
     function add($data)
     {
         $this->db->insert('anggaranatase', $data);

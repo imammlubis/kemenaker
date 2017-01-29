@@ -55,6 +55,23 @@ class penempatanakadModel extends CI_Model
         return $this->db->count_all_results("penempatanakad");
     }
 
+
+    function getSearch($limit=null,$offset=NULL, $key){
+        $this->db->select("*");
+        $this->db->from('penempatanakad a');
+        $this->db->like('TAHUN', $key);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function totalSearch($key) {
+        $this->db->select("*");
+        $this->db->from('penempatanakad a');
+        $this->db->like('TAHUN', $key);
+        $query = $this->db->count_all_results();
+        return $query;
+    }
+
     function add($data)
     {
         $this->db->insert('penempatanakad', $data);

@@ -27,6 +27,24 @@ class pendayagunaantksModel extends CI_Model
         return $this->db->count_all_results("pendayagunaantks");
     }
 
+    function getSearch($limit=null,$offset=NULL, $key){
+        $this->db->select("a.IDPENDAYAGUNAATKS, a.PAKET, a.TARGET, a.REALISASI, b.NAMAPROVINSI, a.TAHUN");
+        $this->db->from('pendayagunaantks a');
+        $this->db->limit($limit, $offset);
+        $this->db->like('b.NAMAPROVINSI', $key);
+        $this->db->join("provinsi b", "a.idprovinsi = b.idprovinsi", "left");
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function totalSearch($key) {
+        $this->db->select("a.IDPENDAYAGUNAATKS, a.PAKET, a.TARGET, a.REALISASI, b.NAMAPROVINSI, a.TAHUN");
+        $this->db->from('pendayagunaantks a');
+        $this->db->like('b.NAMAPROVINSI', $key);
+        $this->db->join("provinsi b", "a.idprovinsi = b.idprovinsi", "left");
+        $query = $this->db->count_all_results();
+        return $query;
+    }
+
     function add($data)
     {
         $this->db->insert('pendayagunaantks', $data);

@@ -27,6 +27,24 @@ class lokasipemberdayaantkklansiaModel extends CI_Model
         return $this->db->count_all_results("lokasipemberdayaantkklansia");
     }
 
+    function getSearch($limit=null,$offset=NULL, $key){
+        $this->db->select("a.IDTKKLANSIA, b.NAMAKABUPATEN, a.QTY, a.JUMLAH");
+        $this->db->from('lokasipemberdayaantkklansia a');
+        $this->db->limit($limit, $offset);
+        $this->db->join("kabupaten b", "a.idkabupaten = b.idkabupaten", "left");
+        $this->db->like('b.NAMAKABUPATEN', $key);
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function totalSearch($key) {
+        $this->db->select("a.IDTKKLANSIA, b.NAMAKABUPATEN, a.QTY, a.JUMLAH");
+        $this->db->from('lokasipemberdayaantkklansia a');
+        $this->db->join("kabupaten b", "a.idkabupaten = b.idkabupaten", "left");
+        $this->db->like('b.NAMAKABUPATEN', $key);
+        $query = $this->db->count_all_results();
+        return $query;
+    }
+
     function add($data)
     {
         $this->db->insert('lokasipemberdayaantkklansia', $data);

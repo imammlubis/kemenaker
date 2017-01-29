@@ -26,6 +26,23 @@ class pemberdayaantenagakerjamudaModel extends CI_Model
     public function total() {
         return $this->db->count_all_results("pemberdayaantenagakerjamuda");
     }
+    function getSearch($limit=null,$offset=NULL, $key){
+        $this->db->select("a.IDPEMBERDAYAANTKM, b.NAMAKABUPATEN, a.QTY, a.JUMLAH, a.TGLAWAL, a.TGLAKHIR, a.KETERANGAN");
+        $this->db->from('pemberdayaantenagakerjamuda a');
+        $this->db->limit($limit, $offset);
+        $this->db->join("kabupaten b", "a.idkabupaten = b.idkabupaten", "left");
+        $this->db->like('b.NAMAKABUPATEN', $key);
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function totalSearch($key) {
+        $this->db->select("a.IDPEMBERDAYAANTKM, b.NAMAKABUPATEN, a.QTY, a.JUMLAH, a.TGLAWAL, a.TGLAKHIR, a.KETERANGAN");
+        $this->db->from('pemberdayaantenagakerjamuda a');
+        $this->db->join("kabupaten b", "a.idkabupaten = b.idkabupaten", "left");
+        $this->db->like('b.NAMAKABUPATEN', $key);
+        $query = $this->db->count_all_results();
+        return $query;
+    }
 
     function add($data)
     {
